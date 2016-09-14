@@ -1,0 +1,109 @@
+<link href="css/home/slider.css" rel="stylesheet" />
+<link href="css/home/home.css" rel="stylesheet" />
+<div ng-controller="sliderController" ng-init="nextSlide()">
+    <div class="container slider" ng-style="{height: iframeHeight + 'px'}">
+        <img ng-repeat="slide in slides" class="slide slide-animation nonDraggableImage"
+            ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+            ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.image}}">
+        
+        <a class="arrow prev" href="#/home" ng-click="prevSlide()"></a>
+        <a class="arrow next" href="#/home" ng-click="nextSlide()"></a>
+        <nav class="nav">
+            <div class="wrapper">
+                <ul class="dots">
+                    <li class="dot" ng-repeat="slide in slides">
+                        <a href="#/home" ng-class="{'active':isCurrentSlideIndex($index)}"
+                            ng-click="setCurrentSlideIndex($index);" ng-bind="slide.description"></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<div ng-controller="homeController" ng-init="init()" class="_c">
+    <div id="topboard" ng-style="{top: top_topBoard + 'px'}"><span ng-class="{'visible': loadClassBoard === true}"></span></div>
+    <div class="content">
+        <div class="section">
+            <div class="content-section">
+                <div class="title">
+                    <h1>Bienvenidos</h1>
+                </div>
+                <p>
+                    Horizonte de Calamuchita, es un complejo de cabañas en el barrio Santa Mónica de Santa Rosa de Calamuchita, Córdoba, con el fin de ofrecer un perfecto lugar de descanso, naturaleza absoluta, sierras y río.
+                </p>
+            </div>
+        </div>
+        <div class="bg-img _1"></div>
+        <div class="section">
+            <div class="content-section">
+                <div class="title">
+                    <h1>Nuestras Cabañas</h1>
+                </div>
+                <p class="text">
+                    Horizonte, es un complejo de cabañas en Santa Mónica, Córdoba, con el fin de ofrecer un perfecto lugar de descanso y naturaleza absoluta. Sierras y río.
+                </p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3 cuadro">
+                            <a href="#/fotogaleria">
+                                <img src="img/1.jpg" alt="">
+                            </a>
+                            <div>
+                                <div>Hola</div>
+                                <div>texto texto texto texto</div>
+                                <a href="#/fotogaleria">Ver Más >></a>
+                            </div>
+                        </div>
+                        <div class="col-3 cuadro">
+                            <a href="#/fotogaleria">
+                                <img src="img/2.jpg" alt="">
+                            </a>
+                            <div>
+                                <div>Hola</div>
+                                <div>texto texto texto texto</div>
+                                <a href="#/fotogaleria">Ver Más >></a>
+                            </div>
+                        </div>
+                        <div class="col-3 cuadro">
+                            <a href="#/fotogaleria">
+                                <img src="img/3.jpg" alt="">
+                            </a>
+                            <div>
+                                <div>Hola</div>
+                                <div>texto texto texto texto </div>
+                                <a href="#/fotogaleria">Ver Más >></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <a href="#/fotogaleria" class="link">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-img _3"></div>
+        <div class="section">
+            <div class="content-section">
+                <div class="title">
+                    <h1>Servicios</h1>
+                </div>
+                <p class="text">
+                    Horizonte, es un complejo de cabañas en Santa Mónica, Córdoba, con el fin de ofrecer un perfecto lugar de descanso y naturaleza absoluta. Sierras y río.
+                </p>
+                <div class="container">
+                    <div class="row">
+                        <div class="servicios">
+                            <div class="item-servicio" ng-repeat="x in servicios">
+                                <img ng-src="img/servicios/ico/{{x.imagen}}"/>
+                                <p>{{x.nombre}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <a href="#/servicios" class="link">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

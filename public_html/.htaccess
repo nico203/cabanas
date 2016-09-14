@@ -1,0 +1,17 @@
+#<IfModule mod_rewrite.c>
+#    Options +FollowSymLinks
+#    RewriteEngine On
+#    
+#    #redireccion para las variables
+#    RewriteCond %{REQUEST_URI} ^/(home|fotogaleria|contacto|mapa) [NC]
+#    RewriteRule ^(.*)$ /#/%1 [R,NE,L]
+#
+#    #Redireccion para todas las otras rutas
+#    RewriteCond %{REQUEST_URI} ^/index.html [NC,OR]
+#    RewriteCond %{REQUEST_FILENAME} !-f
+#    RewriteRule . / [R,L]
+#</IfModule>
+
+#<IfModule !mod_rewrite.c>
+    #"INVALID LINE HERE"
+#</IfModule>

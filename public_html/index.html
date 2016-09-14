@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="HorizontesApp">
+    <head>
+        <title>Horizonte de Calamuchita</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="css/reset.css" rel="stylesheet" />
+        <link href="css/general.css" rel="stylesheet" />
+        <link href="css/navigation/navigation.css" rel="stylesheet" />
+        <link href="css/footer/footer.css" rel="stylesheet" />
+        <link href="css/grid.css" rel="stylesheet" />
+        <link href="css/angular/directives/myPhotoModalSlider.css" rel="stylesheet" />
+        
+        <!-- VER ANGULAR CSS -->
+        <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+        <script type="text/javascript" src="js/TweenMax.min.js"></script>
+        <script type="text/javascript" src="js/angular/angular.min.js"></script>
+        <script type="text/javascript" src="js/angular/angular_route.min.js"></script>
+        <script type="text/javascript" src="js/angular/angular_animate.min.js"></script>
+        <script type="text/javascript" src="js/angular/angular_touch.min.js"></script>
+        <script type="text/javascript" src="js/angular/angular_css.min.js"></script>
+        <script type="text/javascript" src="js/angular/app/app.js"></script>
+        <script type="text/javascript" src="js/angular/app/filters/filters.js"></script>
+        <script type="text/javascript" src="js/angular/app/animations/fadeOnChangePage.js"></script>
+        <script type="text/javascript" src="js/angular/app/directives/myPhotoModalSlider.js"></script>
+        <script type="text/javascript" src="js/angular/app/directives/hideOnScroll.js"></script>
+        <script type="text/javascript" src="js/angular/app/controllers/baseController.js"></script>
+        <script type="text/javascript" src="js/angular/app/controllers/tabController.js"></script>
+        <script type="text/javascript" src="js/angular/app/controllers/sliderController.js"></script>
+        <script type="text/javascript" src="js/angular/app/controllers/homeController.js"></script>
+        <script type="text/javascript" src="js/angular/app/controllers/fotogaleriaController.js"></script>
+        <script type="text/javascript" src="js/angular/app/controllers/footerController.js"></script>
+        <script type="text/javascript" src="js/angular/app/controllers/mapaController.js"></script>
+        <script type="text/javascript" src="js/angular/app/controllers/serviciosController.js"></script>
+        
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqC6bWJZsqQZOrCDHzpJPyRIu18nUP7v8&libraries=places"></script>
+    </head>
+    <body ng-controller="baseController">
+        <div ng-include="'templates/navigation.html'"></div>
+        <div class="fadeOnChangePage" ng-view></div>
+        <div ng-include="'templates/footer.html'"></div>
+    </body>
+</html>

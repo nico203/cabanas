@@ -1,0 +1,7 @@
+footer {
+    min-height: 100px;
+    background: #414141;
+    border-top: 2px solid #9a9a9a;
+    box-shadow: -1px -1px 5px black;
+    padding-top: 50px;
+}
