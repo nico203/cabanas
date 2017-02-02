@@ -3,8 +3,9 @@
 }
 
 .servicio {
-    padding-left: 80px;
-    padding-right: 80px;
+/*    padding-left: 80px;
+    padding-right: 80px;*/
+    padding: 80px;
     text-align: justify;
 }
 .servicio:first-child {
@@ -19,6 +20,9 @@
 
 .servicio img {
     width: 100%;
+    border: 4px solid rgb(243, 243, 243);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.68);
+    transition: all .25s linear;
 }
 
 .servicio h1 {
@@ -28,10 +32,8 @@
 }
 
 .servicio ._left {
-    padding-top: 80px;
     padding-left: 80px;
 }
 .servicio ._right {
-    padding-top: 80px;
     padding-right: 80px;
 }

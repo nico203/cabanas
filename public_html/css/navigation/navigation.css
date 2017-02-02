@@ -8,12 +8,18 @@ header {
     z-index: 99999;
     height: 50px;
     width: 100%;
+}
+
+header > div.background {
+    position: relative;
     background: rgb(115, 93, 74);
-    border-bottom: 1px solid #9A7C66;
     box-shadow: 1px 0px 5px -1px black;
+    height: 50px;
+    width: 100%;
+    border-bottom: 1px solid #9A7C66;
     transition: height .3s, background .5s;
 }
-header:after {
+header > div.background:after {
     content: '';
     display: block;
     width: 100%;
@@ -22,7 +28,7 @@ header:after {
     transition: background .5s;
 }
 
-header > div.attach {
+header > div.background > div.attach {
     max-width: 1350px;
     margin: auto;
     position: relative;
@@ -91,7 +97,7 @@ header > div.attach {
     /*left: 0%;*/
 }
 
-header > div.attach > div.nav_logo {
+header > div.background > div.attach > div.nav_logo {
     background-image: url('../../img/nav-logo.fw.png');
     width: 400px;
     height: 130px;
@@ -106,7 +112,7 @@ header > div.attach > div.nav_logo {
     transition: height .3s linear .15s;
 }
 
-header > div.attach > div.nav_logo:after {
+header > div.background > div.attach > div.nav_logo:after {
     content: '';
     display: block;
     background-color: rgba(255, 153, 0, 0.4);
@@ -114,29 +120,52 @@ header > div.attach > div.nav_logo:after {
     height: 100%;
 }
 
-header.ocultar {
+header.ocultar > div.background {
     height: 0;
 }
 
-header.ocultar > div.attach > div.nav_logo {
+header.ocultar > div.background > div.attach > div.nav_logo {
     height: 0;
 }
 
-header.ocultar > div.attach > #primary_nav > ul > li {
+header.ocultar > div.background > div.attach > #primary_nav > ul > li {
     height: 0;
 }
 
-header.transparente {
+header.transparente > div.background {
     background: rgba(117, 117, 117, 0.13);
 }   
-header.transparente:after {
+header.transparente:after > div.background {
     background: transparent;
 }
 
-header.transparente > div.attach > #primary_nav {
+header.transparente > div.background > div.attach > #primary_nav {
     margin: auto;
 }
 
-header.transparente > div.attach > div.nav_logo {
+header.transparente > div.background > div.attach > div.nav_logo {
     height: 0;
 }
+
+/* Contacto */
+
+.contacto {
+    padding-right: 0 !important;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: -1;
+    padding-top: 5px !important;
+}
+
+.contacto .icono-footer .icono {
+    top: -63px;
+    position: relative;
+    background-color: #a27e5b;
+    box-shadow: 1px 1px 5px rgb(129, 103, 77);
+}
+
+.contacto .icono-footer.show .icono{
+    top: 0;
+}
+

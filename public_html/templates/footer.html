@@ -1,3 +1,21 @@
-<footer>
-    
+<footer ng-controller="footerController" id="footer">
+    <div class="row row-footer">
+        <div class="icono-container" ng-class="{'resaltar-contacto':resaltarContacto}">
+            <span class="texto">Contacto: </span>
+            <div class="icono-footer telefono" ng-class="{'activo':iconos[0]}">
+                <span class="icono " ng-click="clickIcono(0)"></span>
+                <div class="texto"><u>Tel:</u> (343) 5-058-783</div>
+            </div>
+            <div class="icono-footer mail" ng-class="{'activo':iconos[1]}">
+                <span class="icono " ng-click="clickIcono(1)"></span>
+                <div class="texto">horizontedecalamuchita@gmail.com</div>
+            </div>
+            <div class="icono-footer facebook">
+                <a href="https://www.facebook.com/HorizontedeCalamuchita/" class="icono" target="_blank"></a>
+            </div>
+        </div>
+    </div>
+    <div class="row row-footer text-center last-footer">
+        Horizonte de Calamuchita | Federico Leluar y Juan de Dios Filiberto - Santa Mónica - Santa Rosa de Calamuchita - Córdoba - Argentina
+    </div>
 </footer>

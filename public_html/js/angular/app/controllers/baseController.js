@@ -1,5 +1,6 @@
 angular.module('HorizontesApp').controller('baseController', function($rootScope, $document, $timeout, $window){
     var promise, promise1;
+    $rootScope.resaltarContacto = false;
     
     $rootScope.$on('$routeChangeSuccess', function(){
         $document.find('footer').css('opacity', '0');

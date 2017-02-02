@@ -1,7 +1,8 @@
 angular.module('HorizontesApp', [
     'ngRoute',
     'ngAnimate',
-    'ngTouch'
+    'ngTouch',
+    'smoothScroll'
 ])
 .config(function($interpolateProvider, $routeProvider){
     
