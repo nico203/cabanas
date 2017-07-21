@@ -10,3 +10,5 @@
 /public_html/css/mapa/img/GIMP/
 /public_html/css/servicios/img/GIMP/
 ISSUES.txt
+/bower_components/
+/node_modules/

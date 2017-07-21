@@ -1,0 +1,88 @@
+<slider></slider>
+<div ng-init="init()" class="_c">
+    <div id="topboard" ng-style="{top: top_topBoard + 'px'}"><span ng-class="{'visible': loadClassBoard === true}"></span></div>
+    <div class="content">
+        <div class="section">
+            <div class="content-section">
+                <div class="title">
+                    <h1>Bienvenidos</h1>
+                </div>
+                <p>
+                    Horizonte de Calamuchita, es un complejo de cabañas en el barrio Santa Mónica de Santa Rosa de Calamuchita, Córdoba, que ofrece un perfecto lugar de descanso, naturaleza absoluta, sierras y río.
+                </p>
+            </div>
+        </div>
+        <div class="bg-img _1"></div>
+        <div class="section">
+            <div class="content-section">
+                <div class="title">
+                    <h1>Nuestras Cabañas</h1>
+                </div>
+                <p class="text">
+                    Con una ubicación privilegiada, con vista hacia el Cerro Champaquí, es el lugar perfecto para romper la rutina y relajarse.
+                </p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3 cuadro">
+                            <a href="#/fotogaleria">
+                                <img src="img/1.jpg" alt="">
+                            </a>
+                            <div>
+                                <div>Río Santa Rosa</div>
+                                <div>El complejo se encuentra a 250 mts del Río Santa Rosa.</div>
+                                <a href="#/fotogaleria">Ver Más >></a>
+                            </div>
+                        </div>
+                        <div class="col-3 cuadro">
+                            <a href="#/fotogaleria">
+                                <img src="img/2.jpg" alt="">
+                            </a>
+                            <div>
+                                <div>Horizonte</div>
+                                <div>Una ubicación privilegiada, que te dará una vista que te maravillará.</div>
+                                <a href="#/fotogaleria">Ver Más >></a>
+                            </div>
+                        </div>
+                        <div class="col-3 cuadro">
+                            <a href="#/fotogaleria">
+                                <img src="img/3.jpg" alt="">
+                            </a>
+                            <div>
+                                <div>Cabañas de troncos</div>
+                                <div>Construídas con madera y cemento, son frescas en verano y acogedoras en invierno.</div>
+                                <a href="#/fotogaleria">Ver Más >></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <a href="#/fotogaleria" class="link">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-img _3"></div>
+        <div class="section">
+            <div class="content-section">
+                <div class="title">
+                    <h1>Servicios</h1>
+                </div>
+                <p class="text">
+                    Cada cabaña cuenta con dos dormitorios,  uno matrimonial en planta baja y otro en planta alta,  con cuchetas. Además, están equipadas con todo lo que necesitás para sentirte como en casa.
+                </p>
+                <div class="container">
+                    <div class="row">
+                        <div class="servicios">
+                            <div class="item-servicio" ng-repeat="x in servicios">
+                                <img ng-src="img/servicios/ico/{{x.imagen}}"/>
+                                <p>{{x.nombre}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <a href="#/servicios" class="link">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

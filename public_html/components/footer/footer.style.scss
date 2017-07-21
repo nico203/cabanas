@@ -1,0 +1,169 @@
+footer {
+    min-height: 100px;
+    background: #414141;
+    border-top: 2px solid #9a9a9a;
+    box-shadow: -1px 1px 5px black;
+    padding-top: 60px;
+    /*padding-bottom: 40px;*/
+    color: white;
+    font-family: sans-serif;
+    font-size: 18px;
+    text-shadow: 1px 1px #1f1f1f;
+    position: relative;
+    overflow: hidden;
+    
+    &::after{
+        content: '';
+        width: 70%;
+        margin-left: 50%;
+        left: -35%;
+        border-radius: 100% / 100%;
+        height: 20px;
+        display: block;
+        background: rgba(0, 0, 0, 0.44);
+        box-shadow: 0 1px 50px rgb(0, 0, 0);
+        position: absolute;
+        top: -13px;
+    }
+    
+    .row-footer {
+        margin: 0 !important;
+        padding-bottom: 30px;
+    }
+    
+    .icono-container {
+        text-align: right;
+        padding: 0 80px;
+        background-color: transparent;
+        transition: background-color .5s linear;
+        
+        .icono-footer {
+            display: inline-block;
+            padding: 5px 10px;
+            padding-right: 0;
+            border-radius: 50px;
+            margin-right: 0;
+            transition: all .5s linear;
+            border: none;
+            
+            .texto {
+                line-height: 50px;
+                display: inline-block;
+                vertical-align: top;
+                max-width: 0;
+                padding: 0;
+                overflow: hidden;
+                white-space: nowrap;
+                transition: all .5s linear;
+            }
+            
+            .icono {
+                width: 50px;
+                height: 50px;
+                background-color: #8a8a8a;
+                box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.34);
+                border-radius: 50px;
+                display: inline-block;
+                cursor: pointer;
+                transition: all .25s linear;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            
+            &.facebook {
+                .icono {
+                    background-image: url(img/fb_ico.png);
+                    background-size: 24px 38px;
+                    
+                    &:hover {
+                        background-color: #3b5998;
+                    }
+                }
+            }
+            
+            &.mail {
+                .icono {
+                    background-image: url(img/mail.png);
+                    background-size: 38px 24px;
+                    
+                    &:hover  {
+                        background-color: #ff8100;
+                    }
+                }
+            }
+            
+            &.telefono {
+                .icono {
+                    background-image: url(img/telefono.png);
+                    background-size: 27px 38px;
+                    
+                    &:hover  {
+                        background-color: #00a083;
+                    }
+                }
+            }
+            
+            &.activo {
+                padding-right: 10px;
+                margin-right: 10px;
+    
+                .texto {
+                    padding: 0 20px;
+                }
+                
+                &.telefono {
+                    background-color: #00caa5;
+                    border: 1px solid #00eabf;
+                    
+                    .icono {
+                        background-color: #00a083;
+                        box-shadow: 1px 1px 2px rgb(0, 112, 91);
+                    }
+                    
+                    .texto {
+                        max-width: 240px;
+                        text-shadow: 1px 1px #00705b;
+                    }
+                }
+                
+                &.mail {
+                    background-color: #ffc800;
+                    border: 1px solid #ffdd60;
+                    
+                    .icono {
+                        background-color: #ff8100;
+                        box-shadow: 1px 1px 2px rgb(142, 113, 0);
+                    }
+                    
+                    .texto {
+                        max-width: 310px;
+                        text-shadow: 1px 1px #8e6f00;;
+                    }
+                }
+            }
+        }
+        
+        .texto {
+            line-height: 50px;
+            display: inline-block;
+            vertical-align: top;
+            padding: 5px 10px;
+        }
+    }
+    
+                    
+    .text-center {
+        text-align: center;
+    }
+    
+    .last-footer {
+        padding-bottom: 55px;
+        padding-top: 30px;
+        border-top: 1px solid #101010;
+        background: #272329;
+    }
+    
+    .resaltar-contacto {
+        background-color: gray;
+    }
+}

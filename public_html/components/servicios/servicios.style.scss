@@ -1,0 +1,41 @@
+.top-servicios {
+    background-image: url(../img/servicios/top.jpg);
+}
+
+.servicio {
+    padding: 80px;
+    text-align: justify;
+    
+    &:first-child {
+        padding-top: 80px;
+    }
+    
+    &:last-child {
+        padding-bottom: 80px;
+    }
+    
+    &:nth-of-type(even) {
+        background-color: #f9f9f9;
+    }
+    
+    img {
+        width: 100%;
+        border: 4px solid rgb(243, 243, 243);
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.68);
+        transition: all .25s linear;
+    }
+    
+    h1 {
+        padding-bottom: 10px;
+        font-size: 60px;
+        font-family: hor_fnt;
+    }
+    
+    ._left {
+        padding-left: 80px;
+    }
+    
+    ._right {
+        padding-right: 80px;
+    }
+}

@@ -1,0 +1,31 @@
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
+}
+
+.top-fotogaleria {
+    background-image: url(../img/fotogaleria/top.jpg);
+}
+
+.foto {
+    position: relative;
+    width: 100%;
+    
+    > img {
+        border: 4px solid rgb(243, 243, 243);
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.68);
+        width: 100%;
+        cursor: pointer;
+        transition: all .25s linear;
+    }
+    
+    &:hover {
+        > img {
+            transform: scale(1.05); 
+        }
+    } 
+}

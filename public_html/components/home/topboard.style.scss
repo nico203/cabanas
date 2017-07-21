@@ -1,0 +1,92 @@
+#topboard {
+    position: absolute;
+    width: 100%;
+    
+    > span {
+        position: relative;
+        display: block;
+        height: 227px;
+        width: 960px;
+        margin: auto;
+        background: url(img/topbrd.png);
+        
+        &:after {
+            content: '';
+            display: block;
+            left: 0;
+            top: -10px;
+            position: absolute;
+            height: 100%;
+            width: 0;
+            background: url(img/topboard_prev_left.png);
+            transition: width 2.5s;
+        }
+        
+        &:before {
+            content: '';
+            display: block;
+            right: 0;
+            height: 100%;
+            top: 0px;
+            position: absolute;
+            width: 0;
+            background: url(img/topboard_prev_right.png);
+            transition: width 1.5s;
+        }
+        
+        &.visible {
+            &:after, &:before {
+                width: 100%;
+            }
+        }
+    }
+}
+
+/* Imagenes entre secciones */
+
+.bg-img {
+    width: 100%;
+    position: relative;
+    height: 300px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    &._1 {
+        background-image: url(img/bg-1.jpg);
+        background-size: 100% 800px;
+    }
+    &._2 {
+        background-image: url(img/bg-2.jpg);
+        background-size: 100% 800px;
+    }
+
+    &._3 {
+        background-image: url(img/bg-3.jpg);
+        background-size: 100% 900px;
+    }
+}
+
+
+/*  LINK  */ 
+
+.link {
+    width: 350px;
+    display: block;
+    background: white;
+    margin: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid #ec0700;
+    border-radius: 2px;
+    transition: all .2s linear;
+    
+    &:hover {
+        background: #ec0700;
+        color: white;
+    }
+}
+

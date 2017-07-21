@@ -1,0 +1,32 @@
+<div ng-init="init()" class="_c">
+    <div class="top top-fotogaleria">
+        <h1>Tu Lugar</h1>
+        <p>Paz, descanso y relajación absoluta.</p>
+    </div>
+    <div class="content">
+        <div class="row section">
+            <div class="content-section">
+                <div class="title">
+                    <h1>Nuestras Cabañas</h1>
+                </div>
+                <p class="texto-row">
+                    A continuación verás una serie de imágenes. Haz click en una imagen para agrandarla.
+                </p>
+                <p class="texto-row">
+                    Usa las flechas que aparecen en los costados para navegar por las imágenes disponibles.
+                </p>
+            </div>
+        </div>
+        <div class="content-section">
+            <div ng-repeat="fila in imagenes" class="row">
+                <div ng-repeat="imagen in fila" class="col-5">
+                    <div class="foto">
+                        <img ng-src="img/fotogaleria/min/{{imagen}}.jpg" ng-click='abrirModal(imagen)'/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <my-photo-modal-slider base-path="img/fotogaleria/max/" show-modal="mostrarModal" 
+                           image-index="imagenSeleccionada" image-array="imageArray"/>
+</div>

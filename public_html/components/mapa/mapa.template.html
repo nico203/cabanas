@@ -1,0 +1,33 @@
+<div ng-init="init()" class="_c">
+    <div class="top top-mapa">
+    </div>
+    <div class="content">
+        <div class="row section">
+            <div class="content-section">
+                <div class="title">
+                    <h1>¿Cómo Llegar?</h1>
+                </div>
+                <p class="texto-row">
+                    A continuación se muestra un mapa en el cual verás la ubicación del complejo.
+                </p>
+                <p class="texto-row">
+                    Si el mapa no carga, puedes consultarlo aquí: <a href="https://maps.google.com/?cid=17527093845757323419" target="_blank">Ver en Google Maps</a>
+                </p>
+            </div>
+        </div>
+        <div class="row row-margin">
+            <div class="mapa-container">
+                <div class="texto">
+                    <p>Cargando mapa. Por favor, espere.</p>
+                    <div class="puntos">
+                        <span class="punto" ng-show="1 === indice"></span>
+                        <span class="punto" ng-show="2 === indice"></span>
+                        <span class="punto" ng-show="3 === indice"></span>
+                        <span class="punto" ng-show="4 === indice"></span>
+                    </div>
+                </div>
+                <div id="mapa"></div>
+            </div>
+        </div>
+    </div>
+</div>

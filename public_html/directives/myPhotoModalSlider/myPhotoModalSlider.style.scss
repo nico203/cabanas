@@ -1,0 +1,108 @@
+my-photo-modal-slider {
+    position: absolute;
+    width: 100%;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+
+    .modal {
+        background: rgba(0, 0, 0, 0.8);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        opacity: 1;
+        position: absolute;
+
+
+        &.ng-hide {
+            opacity: 0;
+        }
+
+        &.ng-hide-add, &.ng-hide-remove {
+            transition: opacity .3s linear;
+        }
+    }
+    
+    .arrow {
+        position: absolute;
+        z-index: 1002;
+        display: block;
+        top: 50%;
+        margin-top: -35px;
+        width: 36px;
+        height: 71px;
+        outline: none;
+        cursor: pointer;
+        background: url(img/blank.gif) no-repeat;
+
+        &.next {
+            opacity: 0.2;
+            right: 20px;
+            background-image: url(img/paddle_next_999.png);
+            transition: 0.2s linear all;
+
+            &:hover {
+                opacity: 1;
+                background-image: url(img/paddle_next_fff.png);
+            }
+        }
+
+        &.prev {
+            opacity: 0.2;
+            left: 20px;
+            background-image: url(img/paddle_prev_999.png);
+            transition: all 0.2s linear;
+
+            &:hover {
+                opacity: 1;
+                background-image: url(img/paddle_prev_fff.png);
+            }
+        }
+    }
+    
+    .cerrar-modal {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #bbb;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover,&:focus {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+    
+    .imageview {
+        height: auto;
+        width: auto;
+        max-height: 90%;
+        max-width: 80%;
+        position: absolute;
+        height: auto !important;
+        transition: all .3s linear;
+        margin: auto;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0;
+        bottom: 0;
+        box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.54);
+        border: 1px solid #858585;
+        animation: zoom .3s linear;
+
+        &.center {
+            margin: auto;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0;
+            bottom: 0;
+        }
+
+    }
+}
+

@@ -1,0 +1,115 @@
+.top-mapa {
+    background-image: url(img/top.jpg);
+}
+
+.mapa-container {
+    background: #a5a5a5;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    width: 80%;
+    margin: auto;
+    min-height: 400px;
+    height: 400px;
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+    display: table;
+}
+
+.mapa-container > .texto {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.mapa-container > .texto > p {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    color: rgba(154, 154, 154, 0.6);
+    text-shadow: 0 0 0 #000, 2px 2px 3px rgba(255, 255, 255, 0.29);
+    font-family: "franklin-gothic-urw", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
+}
+
+.mapa-container > .texto > .puntos {
+    margin: auto;
+    width: 72px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.mapa-container > .texto > .puntos > .punto {
+    height: 15px;
+    width: 15px;
+    display: inline-block !important;
+    border-radius: 20px;
+    background: #5b5b5b;
+    box-shadow: inset 2px 2px 3px #363636, 
+        2px 2px 3px rgba(255, 255, 255, 0.29);
+    opacity: 1;
+}
+.mapa-container > .texto > .puntos > .punto.ng-hide-add, 
+.mapa-container > .texto > .puntos > .punto.ng-hide-remove {
+    transition: opacity .4s linear;
+}
+.mapa-container > .texto > .puntos > .punto.ng-hide {
+    opacity: 0;
+}
+
+#mapa {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.texto-control-mapa {
+    cursor: pointer;
+    direction: ltr;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    color: rgb(0, 0, 0);
+    font-family: Roboto, Arial, sans-serif;
+    -webkit-user-select: none;
+    font-size: 11px;
+    padding: 8px;
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    -webkit-background-clip: padding-box;
+    box-shadow: rgba(0, 0, 0, 0.298039) 0px 1px 4px -1px;
+    min-width: 27px;
+    background-color: rgb(255, 255, 255);
+    background-clip: padding-box;
+    font-weight: bold !important;
+}
+.texto-control-mapa:hover {
+    background-color: #eee;
+}
+
+/* InfoWindow Google Map */
+#infowindow {
+    width: 250px;
+}
+#infowindow > .titulo {
+    font-size: 14px;
+    font-weight: bold;
+}
+.gm-style-iw > div > div{
+    overflow: hidden !important;
+}
+
+.overlaytext {
+    position: absolute;
+    font-size: 13px;
+    color: #960404;
+    font-weight: bold;
+    width: 100px;
+    text-shadow: 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+    margin-left: 10px;
+    margin-top: -15px;
+}
+
+.content {
+    margin-bottom: 60px;
+}
