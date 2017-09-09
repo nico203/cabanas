@@ -1,6 +1,132 @@
+/* ver de poner todos las imagenes de los componentes en dist/img y accederlas con "../" */
+
 @font-face {
     font-family: hor_fnt;
     src: url(fonts/Righteous/Righteous-Regular.ttf);
+}
+
+/* hamburger */
+/* http://foundation.zurb.com/sites/docs/sass-mixins.html#hamburger */
+
+.hamburger {
+    margin: 10px;
+    @include hamburger(#9A7C66,#725b4a, 30px, 24px, 3px, 3);
+}
+
+/* off-canvas */
+/* http://foundation.zurb.com/sites/docs/off-canvas.html */
+
+@include foundation-off-canvas;
+
+$offcanvas-background: rgb(115, 93, 74);
+#offCanvas {
+    background-color: rgb(115, 93, 74);
+    background-image: url('../img/mosaico.png');
+}
+
+
+/* tabs */
+/* http://foundation.zurb.com/sites/docs/tabs.html */
+
+$tab-background: rgb(115, 93, 74);
+
+.tabs {
+    @include tabs-container;
+    border: none;
+    box-shadow: 1px 0px 5px -1px black;
+    background-color: rgb(115, 93, 74);
+    background-image: url('../img/mosaico.png');
+    
+    &.vertical {
+        @include tabs-container-vertical;
+        background: none !important;
+        box-shadow: none !important;
+        
+        > li {
+            > a {
+                transition: border-color .6s;
+                border-bottom: 1px solid #8c6139;
+                border-right: none !important;
+                margin-top: 0;
+                margin-bottom: 0;
+                margin-right: 15px;
+                margin-left: 15px;
+                padding-bottom: 15px;
+            }
+            
+            &:last-child > a {
+                border-bottom: none;
+            }
+            
+            &.active > a {
+                border-color: transparent;
+            }
+        } 
+    }
+/*    
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: url('../img/mosaico.png');
+        transition: background .5s;
+    } */
+    
+    > li {
+        float: left;
+        width: 20%;
+        height: 50px;
+        cursor: pointer;
+        overflow: hidden;
+        transition: height .3s;
+        
+        > a {
+            position: relative;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            font-family: hor_fnt;
+            letter-spacing: 1px;
+            font-weight: bold;
+            font-size: 20px;
+            color: rgb(142, 96, 44);
+            text-shadow: 0px 1px 2px rgba(255, 235, 169, 0.58);
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-right: 1px solid #8c6139;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            transition: color .2s;
+        }
+        &:hover > a {
+            color: rgba(142,99,46,0.75);
+        }
+        &.active {
+            position:relative;
+            
+            &:after {
+                width: 100%;
+                /*left: 0%;*/
+            }
+            
+            &:hover > a {
+                color: rgb(142, 96, 44);
+            }
+        }
+        
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            background-image: url('../img/line.png');
+            height: 25px;
+            width: 0;
+            /*left: 50%;*/
+            transition: width .6s, left .6s;
+        }
+    }
 }
 
 header {
@@ -8,7 +134,7 @@ header {
     z-index: 99999;
     height: 50px;
     width: 100%;
-
+    
     > div.background {
         position: relative;
         background: rgb(115, 93, 74);
@@ -19,22 +145,17 @@ header {
         transition: height .3s, background .5s;
 
 
-        &:after {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 100%;
-            background: url('img/mosaico.png');
-            transition: background .5s;
-        }
+        
         > div.attach {
             max-width: 1350px;
             margin: auto;
             position: relative;
             
             > div.nav_logo {
-                background-image: url('img/nav-logo.png');
-                width: 400px;
+/*                background-image: url('img/nav-logo.png');*/
+/*                background-size: cover; 
+                background-position: center center; */
+                width: 30%;
                 height: 130px;
                 z-index: 1;
                 position: absolute;
@@ -46,13 +167,21 @@ header {
                 border-bottom-right-radius: 2px;
                 transition: height .3s linear .15s;
                 
-                &:after {
-                    content: '';
-                    display: block;
-                    background-color: rgba(255, 153, 0, 0.4);
+                > img {
+                    position: relative;
                     width: 100%;
                     height: 100%;
+                    
+                    &:after {
+                        content: '';
+                        display: block;
+                        background-color: rgba(255, 153, 0, 0.4);
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
+                
+                
             }
         }
     }
@@ -90,67 +219,6 @@ header {
             background: transparent;
         }
     }  
-}
-
-#primary_nav {
-    width: 60%;
-    margin-left: 450px;
-    position: relative;
-    
-    > ul > li {
-        float: left;
-        width: 20%;
-        height: 50px;
-        cursor: pointer;
-        overflow: hidden;
-        transition: height .3s;
-        
-        > a {
-            position: relative;
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            font-family: hor_fnt;
-            letter-spacing: 1px;
-            font-weight: bold;
-            font-size: 20px;
-            color: rgb(142, 96, 44);
-            text-shadow: 0px 1px 2px rgba(255, 235, 169, 0.58);
-            margin-top: 5px;
-            margin-bottom: 5px;
-            border-right: 1px solid #575757;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            transition: color .2s;
-        }
-        &:hover > a {
-            color: rgba(142,99,46,0.75);
-        }
-        &.active {
-            position:relative;
-            
-            &:after {
-                width: 100%;
-                /*left: 0%;*/
-            }
-            
-            &:hover > a {
-                color: rgb(142, 96, 44);
-            }
-        }
-        
-        &:after {
-            content: '';
-            display: block;
-            position: absolute;
-            bottom: 0px;
-            background-image: url('img/line.png');
-            height: 25px;
-            width: 0;
-            /*left: 50%;*/
-            transition: width .6s, left .6s;
-        }
-    }
 }
 
 

@@ -1,3 +1,11 @@
+/**
+ * ver para cargar dinamicamente el mapa con enfoque responsivo
+ *  http://foundation.zurb.com/sites/docs/interchange.html
+ *  http://foundation.zurb.com/sites/docs/responsive-embed.html
+ *  
+ *  
+ */
+
 function mapaController($scope, $timeout, $window){
     $scope.indice = 0;
     var mapa = null;

@@ -1,6 +1,7 @@
 angular.module('HorizontesApp').controller('tabController', [
     '$rootScope', '$scope', '$route', '$timeout', 'smoothScroll',
     function($rootScope, $scope, $route, $timeout, smoothScroll){
+        console.log($route);
     $scope.$route = $route;
     $scope.mostrarContacto = false;
     $scope.show = [false, false, false];

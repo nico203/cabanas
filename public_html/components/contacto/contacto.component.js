@@ -1,3 +1,8 @@
+/**
+ * Por cualquier cosa que no ande el smooth scroll aca esta el de foundation
+ * http://foundation.zurb.com/sites/docs/smooth-scroll.html
+ */
+
 function contactoController() {
     
 }

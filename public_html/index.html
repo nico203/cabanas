@@ -9,18 +9,20 @@
         <link href="css/general.css" rel="stylesheet" />
         
         <link href="css/grid.css" rel="stylesheet" />
-        <link href="css/angular/directives/myPhotoModalSlider.css" rel="stylesheet" />
-        <link href="css/app.css" rel="stylesheet" /-->
-        <link href="dist/css/app.min.css" rel="stylesheet" />
+        <link href="css/angular/directives/myPhotoModalSlider.css" rel="stylesheet" /-->
+        <link href="css/app.css" rel="stylesheet">
+        <!--link href="dist/css/app.min.css" rel="stylesheet" /-->
         
         <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="../bower_components/foundation-sites/dist/js/foundation.min.js"></script>
         <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
         <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
         <script type="text/javascript" src="../bower_components/angular-route/angular-route.min.js"></script>
         <script type="text/javascript" src="../bower_components/angular-touch/angular-touch.min.js"></script>
         <script type="text/javascript" src="../bower_components/ngSmoothScroll/dist/angular-smooth-scroll.min.js"></script>
         <script type="text/javascript" src="../vendor/TweenMax.min.js"></script>
-        <!--script type="text/javascript" src="modules/slider/slider.component.js"></script>
+        
+        <script type="text/javascript" src="modules/slider/slider.component.js"></script>
         
         <script type="text/javascript" src="app.js"></script>
         <script type="text/javascript" src="filters/filters.js"></script>
@@ -34,14 +36,19 @@
         <script type="text/javascript" src="components/footer/footer.component.js"></script>
         <script type="text/javascript" src="components/navigation/navigation.component.js"></script>
         <script type="text/javascript" src="components/mapa/mapa.component.js"></script>
-        <script type="text/javascript" src="components/servicios/servicios.component.js"></script-->
-        <script type="text/javascript" src="dist/js/app.min.js"></script>
+        <script type="text/javascript" src="components/servicios/servicios.component.js"></script>
+        <!--script type="text/javascript" src="dist/js/app.min.js"></script-->
         
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqC6bWJZsqQZOrCDHzpJPyRIu18nUP7v8&libraries=places"></script>
     </head>
     <body ng-controller="baseController">
-        <app-navigation></app-navigation>
-        <div class="fadeOnChangePage" ng-view></div>
-        <app-footer></app-footer>
+        <div class="off-canvas-wrapper">
+            
+                <app-navigation></app-navigation>
+            <div class="off-canvas-content" data-off-canvas-content>
+                <div class="fadeOnChangePage" ng-view></div>
+                <app-footer></app-footer>
+            </div>
+        </div>
     </body>
 </html>

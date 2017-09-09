@@ -2,6 +2,8 @@
 @import "general";
 @import "grid";
 
+@import "../../bower_components/foundation-sites/scss/foundation";
+
 @import "../components/footer/footer.style";
 @import "../components/fotogaleria/fotogaleria.style";
 @import "../components/home/home.style";
@@ -9,8 +11,6 @@
 @import "../components/navigation/navigation.style";
 @import "../components/servicios/servicios.style";
 @import "../directives/myPhotoModalSlider/myPhotoModalSlider.style";
-
-@import "../../bower_components/foundation-sites/scss/foundation";
 
 @include foundation-grid;
 @include foundation-flex-grid;

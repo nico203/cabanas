@@ -1,3 +1,8 @@
+/**
+ * Ver como setear las imagenes alineadas con este plugin
+ * http://foundation.zurb.com/sites/docs/equalizer.html
+ */
+
 function fotogaleriaController($scope, $window, $timeout){
     var fotosxcolumna = 5;
     var imagenes = 25;

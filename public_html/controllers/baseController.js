@@ -20,4 +20,7 @@ angular.module('HorizontesApp').controller('baseController', [
         $timeout.cancel(promise);
         $timeout.cancel(promise1);
     });
+    angular.element($window).on('resize', function() {
+        $rootScope.$broadcast('window:resize', $window.innerWidth);
+    });
 }]);
