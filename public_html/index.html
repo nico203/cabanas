@@ -11,9 +11,11 @@
         <link href="css/grid.css" rel="stylesheet" />
         <link href="css/angular/directives/myPhotoModalSlider.css" rel="stylesheet" /-->
         <link href="css/app.css" rel="stylesheet">
+        <link href="../bower_components/fullpage.js/dist/jquery.fullpage.min.css" rel="stylesheet">
         <!--link href="dist/css/app.min.css" rel="stylesheet" /-->
         
         <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="../bower_components/fullpage.js/dist/jquery.fullpage.min.js"></script>
         <script type="text/javascript" src="../bower_components/foundation-sites/dist/js/foundation.min.js"></script>
         <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
         <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.min.js"></script>
@@ -44,10 +46,10 @@
     <body ng-controller="baseController">
         <div class="off-canvas-wrapper">
             
-                <app-navigation></app-navigation>
+                <!--app-navigation></app-navigation-->
             <div class="off-canvas-content" data-off-canvas-content>
                 <div class="fadeOnChangePage" ng-view></div>
-                <app-footer></app-footer>
+                <!--app-footer></app-footer-->
             </div>
         </div>
     </body>

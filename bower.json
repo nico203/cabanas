@@ -12,6 +12,7 @@
     "angular-animate": "1.6.x",
     "angular-touch": "1.6.x",
     "ngSmoothScroll": "d-oliveros/ngSmoothScroll",
-    "foundation-sites": "^6.3.x"
+    "foundation-sites": "^6.3.x",
+    "fullpage.js": "^2.9.4"
   }
 }

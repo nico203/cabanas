@@ -1,3 +1,6 @@
+html, body {
+  height: 100%; }
+
 body {
   transition: all .5s; }
 
@@ -26,44 +29,15 @@ body {
   position: relative;
   background: white; }
 
-.section {
-  background-color: #fafafa;
-  border-bottom: 1px solid #e0e0e0;
-  border-top: 1px solid #e0e0e0; }
-  .section:first-child {
-    border-top: none;
-    padding-top: 50px; }
-  .section:last-child {
-    border-bottom: none;
-    padding-bottom: 50px;
-    margin: 0px; }
-
-.content-section {
-  margin: auto;
-  max-width: 1350px;
-  padding: 80px;
-  font-family: sans-serif;
-  font-size: 20px;
-  text-align: center; }
-
-.content-section-float {
-  margin: auto;
-  max-width: 1350px;
-  font-family: sans-serif;
-  font-size: 20px;
-  text-align: center; }
-
 .title {
   font-family: hor_fnt;
   border-bottom: 1px solid #AEAEAE;
-  margin-bottom: 30px;
-  padding-right: 20px;
-  padding-left: 20px; }
+  margin-bottom: 30px; }
   .title > h1 {
-    font-size: 60px;
+    font-size: 40px;
     text-shadow: 2px 2px 2px white;
     text-align: center;
-    padding-bottom: 10px; }
+    padding-bottom: 5px; }
 
 .texto-row {
   font-family: sans-serif;
@@ -90,5 +64,7 @@ body {
 .content {
   opacity: 1;
   transition: all .1s linear; }
+
+/* medium and up */
 
 /*# sourceMappingURL=general.css.map */

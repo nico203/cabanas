@@ -6,7 +6,7 @@ angular.module('HorizontesApp', [
     'slider'
 ])
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
-    $locationProvider.hashPrefix('');
+    $locationProvider.hashPrefix('!');
     //Configuracion del enrutamiento
     $routeProvider.when('/home', {
         template: '<home></home>',

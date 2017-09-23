@@ -14,6 +14,7 @@
 function homeController($scope, $timeout, $window){
     $scope.top_topBoard = (window.innerHeight * 97 / 200) - 113; //Seteo del height de las imagenes
     $scope.loadClassBoard = false;
+    $scope.index = 1;
     $scope.servicios = [
         {imagen:'swimm.png', nombre: 'Piscina'},
         {imagen:'wifi.png', nombre: 'Wi-Fi'},
@@ -27,6 +28,24 @@ function homeController($scope, $timeout, $window){
         $timeout(function(){
             $scope.loadClassBoard = true;
         }, 1);
+    };
+    
+    this.$onInit = function() {
+        $timeout(function(){
+            $('#fullpage').fullpage({
+                onLeave: function(index, nextIndex, direction){
+                    console.log(index,nextIndex,direction);
+                    $scope.index = nextIndex;
+                    console.log('index', $scope.index);
+                }
+            });
+        });
+    };
+    
+    $scope.moverASeccion = function(index) {
+        console.log('index', index);
+        $scope.index = index;
+        $.fn.fullpage.moveTo(index);
     };
 }
 
