@@ -120,7 +120,13 @@ body {
   opacity: 1;
   transition: all .1s linear; }
 
+.ocultar-mobile {
+  display: none; }
+
 /* medium and up */
+@media screen and (min-width: 40em) {
+  .ocultar-mobile {
+    display: block; } }
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;

@@ -13,6 +13,7 @@
     "angular-touch": "1.6.x",
     "ngSmoothScroll": "d-oliveros/ngSmoothScroll",
     "foundation-sites": "^6.3.x",
-    "fullpage.js": "^2.9.4"
+    "fullpage.js": "^2.9.4",
+    "aos": "^2.2.0"
   }
 }

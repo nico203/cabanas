@@ -11,7 +11,7 @@
  *  
  */
 
-function homeController($scope, $timeout, $window){
+function homeController($scope, $timeout, windowResize){
     $scope.top_topBoard = (window.innerHeight * 97 / 200) - 113; //Seteo del height de las imagenes
     $scope.loadClassBoard = false;
     $scope.index = 1;
@@ -34,15 +34,17 @@ function homeController($scope, $timeout, $window){
         $timeout(function(){
             $('#fullpage').fullpage({
                 onLeave: function(index, nextIndex, direction){
-                    console.log(index,nextIndex,direction);
-                    $scope.index = nextIndex;
-                    console.log('index', $scope.index);
+                    $scope.$apply(function() {
+                        $scope.index = nextIndex;
+                    });
                 }
             });
         });
+        
+        console.log(windowResize.getCurrentViweport());
     };
     
-    $scope.moverASeccion = function(index) {
+    $scope.moverASeccion = function(index, mover) {
         console.log('index', index);
         $scope.index = index;
         $.fn.fullpage.moveTo(index);
@@ -51,5 +53,5 @@ function homeController($scope, $timeout, $window){
 
 angular.module('HorizontesApp').component('home', {
     templateUrl: 'components/home/home.template.html',
-    controller: ['$scope','$timeout','$window',homeController]
+    controller: ['$scope','$timeout','windowResize',homeController]
 });
