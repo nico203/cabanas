@@ -4,6 +4,15 @@ html, body {
 body {
   transition: all .5s; }
 
+.align-center {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  align-items: center; }
+
 .top {
   width: 100%;
   background-size: cover;
@@ -45,7 +54,7 @@ body {
   margin-bottom: 10px; }
 
 .text {
-  margin-bottom: 50px; }
+  margin-bottom: 20px; }
 
 .row-margin {
   margin-top: 40px;

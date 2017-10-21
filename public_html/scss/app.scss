@@ -1,8 +1,11 @@
 @import "reset";
 @import "general";
 @import "grid";
+@import "mixins";
+
 
 @import "../../bower_components/foundation-sites/scss/foundation";
+@import "../../bower_components/motion-ui/src/motion-ui";
 
 @import "../components/footer/footer.style";
 @import "../components/fotogaleria/fotogaleria.style";
@@ -11,8 +14,12 @@
 @import "../components/navigation/navigation.style";
 @import "../components/servicios/servicios.style";
 @import "../directives/myPhotoModalSlider/myPhotoModalSlider.style";
+@import "../directives/slider/slider.style";
+@import "../directives/logo/logo.style";
 
 @include foundation-grid;
 @include foundation-flex-grid;
 @include foundation-flex-classes;
 @include foundation-xy-grid-classes;
+@include motion-ui-transitions;
+@include motion-ui-animations;

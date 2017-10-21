@@ -1,10 +1,115 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Sep 25, 2017, 6:38:19 PM
-    Author     : NicolasAndres
-*/
+$base: 0.3s;
 
+#nuestras_cabanas {
+    background-color: red;
+    
+    .animate-1 {
+        @include animation(0.7s, $base);
+    }
+
+    .animate-2 {
+        @include animation(1s, $base + 0.3s);
+    }
+
+    .animate-3 {
+        @include animation(0.7s, $base + 0.6s);
+    }
+
+    .animate-4 {
+        @include animation(0.7s, $base + 0.7s);
+    }
+
+    .animate-5 {
+        @include animation(0.7s, $base + 0.8s);
+    }
+
+    .animate-6 {
+        @include animation(1s, $base + 1s);
+    }
+}
+
+
+/* Cuadro con la imagen */
+.cuadro {
+    position: relative;
+    max-height: 25vh;
+    margin-bottom: 5px;
+    
+    > a > img {
+        max-height: 25vh;
+    }
+    
+    > div {
+        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 90%;
+        opacity: 0;
+        transition: opacity .25s linear;
+        
+        > div {
+            color: white;
+            text-align: justify;
+            margin-left: 15px;
+            margin-right: 15px;
+            font-size: 14px;
+            
+            &:first-child {
+                color: white;
+                text-transform: uppercase;
+                text-align: left;
+                border-bottom: 2px solid white;
+                padding: 10px 0 3px 0;
+                margin-left: 15px;
+                margin-right: 15px;
+                margin-bottom: 5px;
+                font-weight: bold;
+                font-size: 20px;
+            }
+            
+            > a {
+                &:last-child {
+                    text-decoration: none;
+                    width: 90px;
+                    color: red;
+                    font-size: 15px;
+                    text-align: left;
+                    display: block;
+                    margin-left: 15px;
+                    margin-top: 10px;
+                    transition: all .2s linear;
+
+                    &:hover {
+                        color: white;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        
+        > a {
+            &:last-child {
+                text-decoration: none;
+                width: 90px;
+                color: red;
+                font-size: 15px;
+                text-align: left;
+                display: block;
+                margin-left: 15px;
+                margin-top: 10px;
+                transition: all .2s linear;
+                
+                &:hover {
+                    color: white;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &:hover > div {
+        opacity: 1;
+    }
+}

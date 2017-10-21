@@ -3,91 +3,131 @@
 <div id="topboard" ng-style="{top: top_topBoard + 'px'}"><span ng-class="{'visible': loadClassBoard === true}"></span></div-->
 <div id="menu-fp">
     <ul>
-        <li ng-click="moverASeccion(1)" ng-class="{'active':index == 1}"></li>
-        <li ng-click="moverASeccion(2)" ng-class="{'active':index == 2}"></li>
-        <li ng-click="moverASeccion(3)" ng-class="{'active':index == 3}"></li>
+        <li ng-click="moverASeccion(1)" ng-class="{'active':index === 1}"></li>
+        <li ng-click="moverASeccion(2)" ng-class="{'active':index === 2}"></li>
+        <li ng-click="moverASeccion(3)" ng-class="{'active':index === 3}"></li>
+        <li ng-click="moverASeccion(3)" ng-class="{'active':index === 4}"></li>
+        <li ng-click="moverASeccion(3)" ng-class="{'active':index === 5}"></li>
     </ul>
 </div>
-
 <div class="content" id="fullpage">
+    <div class="section" id="slider">
+        <slider></slider>
+        <logo></logo>
+    </div>
     <div class="section" id="bienvenido">
-        <div class="content-section">
-            <div class="title">
-                <h1>Bienvenidos</h1>
+        <div class="grid-container">
+            <div class="grid-x grid-margin-x">
+                <div class="medium-10 medium-offset-1 large-8 large-offset-2 cell title animated animate-1" ng-class="{'fadeInUp':index === 2}">
+                    <h1>Bienvenidos</h1>
+                </div>
+                <p class="medium-10 medium-offset-1 large-8 large-offset-2 cell animated animate-2" ng-class="{'fadeIn':index === 2}">
+                    Horizonte de Calamuchita, es un complejo de cabañas en el barrio Santa Mónica de Santa Rosa de Calamuchita, Córdoba, que ofrece un perfecto lugar de descanso, naturaleza absoluta, sierras y río.
+                </p>
             </div>
-            <p>
-                Horizonte de Calamuchita, es un complejo de cabañas en el barrio Santa Mónica de Santa Rosa de Calamuchita, Córdoba, que ofrece un perfecto lugar de descanso, naturaleza absoluta, sierras y río.
-            </p>
         </div>
     </div>
-    <!--div class="bg-img _1"></div-->
     <div class="section" id="nuestras_cabanas">
-        <div class="content-section">
-            <div class="title">
-                <h1>Nuestras Cabañas</h1>
-            </div>
-            <p class="text">
-                Con una ubicación privilegiada, con vista hacia el Cerro Champaquí, es el lugar perfecto para romper la rutina y relajarse.
-            </p>
-            <div class="container">
-                <div class="row ocultar-mobile">
-                    <div class="col-3 cuadro">
-                        <a href="#/fotogaleria">
-                            <img src="img/1.jpg" alt="">
-                        </a>
-                        <div>
-                            <div>Río Santa Rosa</div>
-                            <div>El complejo se encuentra a 250 mts del Río Santa Rosa.</div>
-                            <a href="#/fotogaleria">Ver Más >></a>
+        <div class="grid-container">
+            <div class="grid-x grid-margin-x">
+                <div class="cell medium-10 medium-offset-1 large-8 large-offset-2">
+                    <div class="grid-x" ng-class="{'grid-padding-x':currentViewport !== 'small'}">
+                        <div class="cell auto align-center">
+                            <div class="grid-x">
+                                <div class="cell title animated animate-1" ng-class="{'fadeInUp':index === 3}">
+                                    <h1>Nuestras Cabañas</h1>
+                                </div>
+                                <p class="cell text animated animate-2" ng-class="{'fadeIn':index === 3}">
+                                    Con una ubicación privilegiada, con vista hacia el Cerro Champaquí, es el lugar perfecto para romper la rutina y relajarse.
+                                </p>
+                                <a href="#/fotogaleria" class="cell button animated animate-6" ng-class="{'fadeIn':index === 3}">Ver más</a>
+                            </div>
+                        </div>
+                        <div ng-if="currentViewport !== 'small'" class="cell shrink">
+                            <div class="grid-y">
+                                <div class="cell cuadro animated animate-3" ng-class="{'fadeInRight':index === 3}">
+                                    <a href="#/fotogaleria">
+                                        <img src="img/1.jpg" alt="">
+                                    </a>
+                                    <div>
+                                        <div>Río Santa Rosa</div>
+                                        <div>El complejo se encuentra a 250 mts del Río Santa Rosa.</div>
+                                        <a href="#/fotogaleria">Ver Más >></a>
+                                    </div>
+                                </div>
+                                <div class="cell cuadro animated animate-4" ng-class="{'fadeInRight':index === 3}">
+                                    <a href="#/fotogaleria">
+                                        <img src="img/2.jpg" alt="">
+                                    </a>
+                                    <div>
+                                        <div>Horizonte</div>
+                                        <div>Una ubicación privilegiada, que te dará una vista que te maravillará.</div>
+                                        <a href="#/fotogaleria">Ver Más >></a>
+                                    </div>
+                                </div>
+                                <div class="cell cuadro animated animate-5" ng-class="{'fadeInRight':index === 3}">
+                                    <a href="#/fotogaleria">
+                                        <img src="img/3.jpg" alt="">
+                                    </a>
+                                    <div>
+                                        <div>Cabañas de troncos</div>
+                                        <div>Construídas con madera y cemento, son frescas en verano y acogedoras en invierno. <!--a href="#/fotogaleria">Ver Más >></a--></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-3 cuadro">
-                        <a href="#/fotogaleria">
-                            <img src="img/2.jpg" alt="">
-                        </a>
-                        <div>
-                            <div>Horizonte</div>
-                            <div>Una ubicación privilegiada, que te dará una vista que te maravillará.</div>
-                            <a href="#/fotogaleria">Ver Más >></a>
-                        </div>
-                    </div>
-                    <div class="col-3 cuadro">
-                        <a href="#/fotogaleria">
-                            <img src="img/3.jpg" alt="">
-                        </a>
-                        <div>
-                            <div>Cabañas de troncos</div>
-                            <div>Construídas con madera y cemento, son frescas en verano y acogedoras en invierno.</div>
-                            <a href="#/fotogaleria">Ver Más >></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <a href="#/fotogaleria" class="button">Ver más</a>
                 </div>
             </div>
         </div>
     </div>
-    <!--div class="bg-img _3"></div-->
     <div class="section" id="servicios">
-        <div class="content-section">
-            <div class="title">
-                <h1>Servicios</h1>
-            </div>
-            <p class="text">
-                Cada cabaña cuenta con dos dormitorios,  uno matrimonial en planta baja y otro en planta alta,  con cuchetas. Además, están equipadas con todo lo que necesitás para sentirte como en casa.
-            </p>
-            <div class="container">
-                <div class="row ocultar-mobile">
-                    <div class="servicios">
-                        <div class="item-servicio" ng-repeat="x in servicios">
-                            <img ng-src="img/servicios/ico/{{x.imagen}}"/>
-                            <p>{{x.nombre}}</p>
+        <div class="grid-container">
+            <div class="grid-x grid-margin-x">
+                <div class="cell medium-10 medium-offset-1 large-8 large-offset-2">
+                    <div class="grid-x">
+                        <div class="cell title animated animate-1" ng-class="{'fadeInUp':index === 4}">
+                            <h1>Servicios</h1>
                         </div>
+                        <p class="cell text animated animate-2" ng-class="{'fadeIn':index === 4}">
+                            Cada cabaña cuenta con dos dormitorios,  uno matrimonial en planta baja y otro en planta alta,  con cuchetas. Además, están equipadas con todo lo que necesitás para sentirte como en casa.
+                        </p>
+                        <div class="cell" ng-if="currentViewport !== 'small'" >
+                            <div class="grid-x grid-margin-x small-up-3 medium-up-6 large-up-6 servicios">
+                                <div ng-repeat="x in servicios" class="cell item-servicio animated animate-{{$index + 2}}" ng-class="{'fadeInUp':index === 4}">
+                                    <img ng-src="img/servicios/ico/{{x.imagen}}"/>
+                                    <p>{{x.nombre}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#/servicios" class="button cell animated animate-8" ng-class="{'fadeIn':index === 4}">Ver más</a>
                     </div>
                 </div>
-                <div class="row">
-                    <a href="#/servicios" class="button">Ver más</a>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="contacto">
+        <div class="grid-container margin full-height">
+            <div class="grid-x grid-margin-x full-height">
+                <div class="cell medium-10 medium-offset-1 large-8 large-offset-2">
+                    <div class="grid-y full-height" ng-class="{'grid-padding-y':currentViewport !== 'small'}">
+                        <div class="cell auto align-center">
+                            <div class="grid-y">
+                                <div class="cell">
+                                    <a href="https://www.facebook.com/HorizontedeCalamuchita/" class="icono facebook" 
+                                       ng-click="cambiarContacto('fb')" target="_blank"></a>
+                                    <a href="mailto:horizontedecalamuchita@gmail.com" class="icono mail" 
+                                       ng-click="cambiarContacto('mail')"></a>
+                                    <a href="tel:+543435058783" class="icono telefono" 
+                                       ng-click="cambiarContacto('tel')"></a>
+                                </div>
+                                <div class="cell mostrar-contacto" ng-bind="contactoActual"></div>
+                            </div>
+                        </div>
+                        <div class="cell shrink texto-fondo">
+                            Horizonte de Calamuchita | Federico Leluar y Juan de Dios Filiberto - Santa Mónica - Santa Rosa de Calamuchita - Córdoba - Argentina
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

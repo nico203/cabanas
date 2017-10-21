@@ -12,9 +12,14 @@
  */
 
 function homeController($scope, $timeout, windowResize){
+    var MAIL = 'horizontedecalamuchita@gmail.com';
+    var TELEFONO = '(343) 5-058-783';
+    
     $scope.top_topBoard = (window.innerHeight * 97 / 200) - 113; //Seteo del height de las imagenes
     $scope.loadClassBoard = false;
     $scope.index = 1;
+    $scope.currentViewport = null;
+    $scope.contactoActual = null;
     $scope.servicios = [
         {imagen:'swimm.png', nombre: 'Piscina'},
         {imagen:'wifi.png', nombre: 'Wi-Fi'},
@@ -39,9 +44,9 @@ function homeController($scope, $timeout, windowResize){
                     });
                 }
             });
+            
+            $scope.currentViewport = windowResize.getCurrentViweport();
         });
-        
-        console.log(windowResize.getCurrentViweport());
     };
     
     $scope.moverASeccion = function(index, mover) {
@@ -49,6 +54,24 @@ function homeController($scope, $timeout, windowResize){
         $scope.index = index;
         $.fn.fullpage.moveTo(index);
     };
+    
+    $scope.cambiarContacto = function(contacto) {
+        if(contacto === 'fb') {
+            $scope.contactoActual = null;
+        } else if (contacto === 'mail') {
+            $scope.contactoActual = MAIL;
+        } else {
+            $scope.contactoActual = TELEFONO;
+        }
+    };
+    
+    var destroyViewportChangeListener = $scope.$on('viewportChange', function(e, size) {
+        $scope.currentViewport = size;
+    });
+    
+    $scope.$on('$destroy', function() {
+        destroyViewportChangeListener();
+    });
 }
 
 angular.module('HorizontesApp').component('home', {

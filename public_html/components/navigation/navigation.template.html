@@ -1,10 +1,11 @@
 <header>
-    <div ng-show="smallSize" ng-click="openCanvas()" class="hamburger"></div>
-    <div id="offCanvas" data-off-canvas>
-        <div ng-if="showLogo" class="nav_logo">
-            <img src="img/nav-logo.png">
+    <!--hamburger ng-click="openCanvas()"></hamburger-->
+    <div hamburger ng-click="openCanvas()"></div>
+    <div  id="offCanvas" class="off-canvas position-right" data-off-canvas>
+        <div class="logo-wrapper">
+            <logo nav></logo>
         </div>
-        <ul ng-class="{'vertical':smallSize}" class="tabs">
+        <ul class="vertical tabs">
             <li class="tabs-title" 
                 ng-class="{'active': rutaActual === 'inicio'}"
                 ng-click="cambioRutaActual('inicio')">

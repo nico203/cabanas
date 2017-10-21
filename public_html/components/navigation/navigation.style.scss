@@ -1,16 +1,10 @@
 /* ver de poner todos las imagenes de los componentes en dist/img y accederlas con "../" */
 
+@import '../../directives/hamburger/hamburger.style'; 
+
 @font-face {
     font-family: hor_fnt;
     src: url(fonts/Righteous/Righteous-Regular.ttf);
-}
-
-/* hamburger */
-/* http://foundation.zurb.com/sites/docs/sass-mixins.html#hamburger */
-
-.hamburger {
-    margin: 10px;
-    @include hamburger(#9A7C66,#725b4a, 30px, 24px, 3px, 3);
 }
 
 /* off-canvas */
@@ -244,4 +238,11 @@ header {
             top: 0;
         }
     } 
+}
+
+
+/* Logo */
+.logo-wrapper {
+    margin-top: 20px;
+    margin-bottom: 10px;
 }

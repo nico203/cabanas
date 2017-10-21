@@ -2,8 +2,7 @@ angular.module('HorizontesApp', [
     'ngRoute',
     'ngAnimate',
     'ngTouch',
-    'smoothScroll',
-    'slider'
+    'smoothScroll'
 ])
 .config([
     '$routeProvider', '$locationProvider', 'windowResizeProvider', 

@@ -1,0 +1,128 @@
+/*
+Calamuchita es la palabra mas larga, entonces se toma como base
+relaciones: 
+calamuchita: 1
+horizonte: 1.11
+de: 0.66
+cabanas: 0.44
+*/
+
+$logo-color: black;
+$max-font-size-nav: 38px;
+
+.logo {
+    position:absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    .wrapper {
+        font-family: hor_fnt;
+        color: $logo-color;
+        
+        span {
+            display:block;
+        }
+
+        .horizonte {
+            font-size: 50px;
+            text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+        }
+
+        .de {
+            font-size: 30px;
+            margin-top: -8px;
+            font-weight: bolder;
+            text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+        }
+
+        .calamuchita {
+            font-size: 45px;
+            margin-top: -15px;  
+            text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+        }
+        
+        .titulo {
+            padding-top: 3px;
+            border-top: 5px solid $logo-color;
+            border-bottom: 5px solid $logo-color;
+            padding-bottom: 5px;
+            margin-bottom: 7px;
+        }
+        
+        .barra {
+            width: 100%;
+            position: relative;
+            
+            .ovalo {
+                width: 6px;
+                height: 8px;
+                background: $logo-color;
+                display: block;
+                position: absolute;
+                top: 50%;
+                margin-top: -4px;
+                border-radius: 10px;
+                
+                &.izquierda {
+                    left: 20px;
+                    
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        height: 0;
+                        border-top: 4px solid transparent;
+                        border-right: 22px solid $logo-color;
+                        border-bottom: 4px solid transparent;
+                        right: 4px;
+                    }
+                }
+                
+                &.derecha {
+                    right: 20px;
+                    
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        width: 0;
+                        height: 0;
+                        border-top: 4px solid transparent;
+                        border-left: 22px solid $logo-color;
+                        border-bottom: 4px solid transparent;
+                        left: 4px;
+                    }
+                }
+            }
+        }
+        
+        .cabanas {
+            font-size: 20px;
+        }
+    }
+    
+    
+    &.nav {
+        position: relative;
+        
+        .horizonte {
+            font-size: $max-font-size-nav * 1.11;
+        }
+        .de {
+            font-size: $max-font-size-nav * 0.66;
+            margin-top: -$max-font-size-nav * 0.17; 
+        }
+        .calamuchita {
+            font-size: $max-font-size-nav;
+            margin-top: -$max-font-size-nav * 0.33; 
+        }
+        .cabanas {
+            font-size: $max-font-size-nav * 0.44;
+        }
+    }
+}

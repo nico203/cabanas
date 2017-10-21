@@ -7,61 +7,8 @@
  */
 
 function navigationController($window,$scope, $timeout, $animate, $location){
-    
-    $scope.$on('$routeChangeSuccess', function(e, c, p) {
-        console.log(c, p);
-    });
-    
-    var SCREEN_SIZE_MEDIUM = 700;
-    var SCREEN_SIZE_LARGE = 1024;
-    
     $scope.exclude = ['home'];
     $scope.offCanvas = null;
-    $scope.showLogo = false;
-    $scope.positionNav = null;
-    $scope.smallSize = false;
-    
-    //Se calcula y se setea la navegacion acorde a la pantalla
-    var calcScreen = function(size) {
-        if(size >= SCREEN_SIZE_LARGE) {
-            $scope.showLogo = true;
-            $scope.smallSize = false;
-            $scope.positionNav = {
-                'margin-left' : '33%',
-                'width': '60%'
-            };
-        } else if(size >= SCREEN_SIZE_MEDIUM) {
-            $scope.showLogo = false;
-            $scope.smallSize = false;
-            $scope.positionNav = {
-                'margin-left' : '5%',
-                'width': '90%'
-            };
-        } else {
-            $scope.showLogo = false;
-            $scope.smallSize = true;
-        }
-        
-        //Se aplica la clase off-canvas en caso de ser pantalla para celulares, sino se la quita
-        if($scope.smallSize) {
-            $animate.addClass($('#offCanvas'),'off-canvas position-left').then(function(){
-                $timeout(function() {
-                    if($scope.offCanvas === null) {
-                        $scope.offCanvas = new Foundation.OffCanvas($('#offCanvas'));
-                    }
-                });
-            },function(){});
-        } else if($scope.offCanvas !== null) {
-            $animate.removeClass($('#offCanvas'),'off-canvas position-left').then(function(){
-                $timeout(function() {
-                    if($scope.offCanvas !== null) {
-                        $('#offCanvas').foundation('_destroy');
-                        $scope.offCanvas = null;
-                    }
-                });
-            },function(){});
-        }
-    };
     
     //Funciones que permiten el mapeo de la vista actual al menu para ponerle la clase "active"
     $scope.rutaActual = 'inicio';
@@ -76,13 +23,23 @@ function navigationController($window,$scope, $timeout, $animate, $location){
     
     //Al iniciar el componente se calcula el tipo de pantalla y se muestra la navegacion acorde
     this.$onInit = function() {
-        calcScreen($window.innerWidth);
+        $timeout(function() {
+            if($scope.offCanvas === null) {
+                $scope.offCanvas = new Foundation.OffCanvas($('#offCanvas'), {
+                    transition: 'push'
+                });
+                //ver de colocar todo en un solo documento para ver cual es el error
+//                $(document).foundation();
+                console.log('offCanvas',$scope.offCanvas);
+            }
+        });
     };
-
-    //Al ajustar la pantalla se calcula el tipo y se muestra la navegacion acorde
-    $scope.$on('window:resize', function(e, size) {
-        calcScreen(size);
+    
+    $scope.$on('$dewstroy', function() {
+        $('#offCanvas').foundation('_destroy');
+        $scope.offCanvas = null;
     });
+
 }
 
 angular.module('HorizontesApp').component('appNavigation', {

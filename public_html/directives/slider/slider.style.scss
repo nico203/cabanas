@@ -1,0 +1,68 @@
+@include foundation-orbit;
+
+.orbit {
+    @include orbit-wrapper;
+    height: 100%;
+}
+
+.orbit-wrapper {
+    height: 100%;
+}
+
+.orbit-container {
+    @include orbit-container;
+    height: 100%;
+}
+
+.orbit-figure {
+    height: 100%;
+}
+
+.orbit-slide {
+    @include orbit-slide;
+    height: 100%;
+}
+
+.orbit-image {
+    @include orbit-image;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    
+    &._1 {
+        background-color: red;
+    }
+    &._2 {
+        background-color: blue;
+    }
+    &._3 {
+        background-color: green;
+    }
+    &._4 {
+        background-color: yellow;
+    }
+}
+
+.orbit-caption {
+    @include orbit-caption;
+}
+
+.orbit-controls {
+    @include orbit-control;
+    width: 100%;
+    
+    .orbit-previous {
+        @include orbit-previous;
+    }
+    .orbit-next {
+        @include orbit-next;
+    }
+}
+
+
+.slider {
+    display: block;
+    background: purple;
+    height: 100%;
+    width: 100%;
+}
