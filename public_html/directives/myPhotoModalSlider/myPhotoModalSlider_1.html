@@ -1,8 +1,6 @@
-<div class="my-photo-modal-slider reveal full" data-reveal>
+<div class="modal" ng-show="showModal">
     <img class="imageview" ng-src="{{path}}">
-    
+    <span class="cerrar-modal" ng-click="closeModal()">×</span>
     <span class="arrow prev" ng-click="prevPic()"></span>
     <span class="arrow next" ng-click="nextPic()"></span>
-    
-    <span class="cerrar-modal" data-close>&times;</span>
 </div>

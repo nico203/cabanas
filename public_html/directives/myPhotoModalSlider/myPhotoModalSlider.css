@@ -1,4 +1,31 @@
-my-photo-modal-slider {
+
+
+.my-photo-modal-slider {
+    .reveal {
+        @include reveal-modal-base;
+        @include foundation-reveal;
+        /*@include reveal-overlay(rgba(0, 0, 0, 0.8));*/
+        /*background: rgba(0, 0, 0, 0.8);*/
+    }
+    
+    .cerrar-modal {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #bbb;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+        
+        &::hover,&:focus {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+
+/*my-photo-modal-slider {
     position: absolute;
     width: 100%;
     display: none;
@@ -97,3 +124,4 @@ my-photo-modal-slider .imageview.center {
     bottom: 0;
 }
 
+*/

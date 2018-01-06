@@ -24,6 +24,8 @@ function navigationController($window,$scope, $timeout, $animate, $location){
     //Al iniciar el componente se calcula el tipo de pantalla y se muestra la navegacion acorde
     this.$onInit = function() {
         $timeout(function() {
+            console.log('$location',$location);
+            $scope.rutaActual = $location.path().substring(1);
             if($scope.offCanvas === null) {
                 $scope.offCanvas = new Foundation.OffCanvas($('#offCanvas'), {
                     transition: 'push'

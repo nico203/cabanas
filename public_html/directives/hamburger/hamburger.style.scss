@@ -23,22 +23,27 @@ $translateX: 0;
     -webkit-font-smoothing: antialiased;
     text-align:center;
     position: fixed;
+    z-index: 12;
     margin: $height-line;
     border-radius: ($height-icon * 2);
     
+    @media screen and (min-width: 40em) {
+        margin: 25px;
+    }
+    
     &:hover, &:focus {
-            .line-1 {
-                background:black;
-                transform: translateY($height-line / 2 * -1);
-                -webkit-transform: translateY($height-line / 2 * -1);
-                -moz-transform: translateY($height-line / 2 * -1);
-            }
-            .line-3 {
-                background:black;
-                transform: translateY($height-line / 2);
-                -webkit-transform: translateY($height-line / 2);
-                -moz-transform: translateY($height-line / 2);
-            }  
+        .line-1 {
+            background:black;
+            transform: translateY($height-line / 2 * -1);
+            -webkit-transform: translateY($height-line / 2 * -1);
+            -moz-transform: translateY($height-line / 2 * -1);
+        }
+        .line-3 {
+            background:black;
+            transform: translateY($height-line / 2);
+            -webkit-transform: translateY($height-line / 2);
+            -moz-transform: translateY($height-line / 2);
+        }  
     }
 }
 
@@ -103,3 +108,4 @@ a {
         color:$color;
     }
 }*/
+

@@ -9,6 +9,9 @@ cabanas: 0.44
 
 $logo-color: black;
 $max-font-size-nav: 38px;
+$color-nav: #634421;
+$text-shadow-nav: 0px 1px 1px rgba(202, 186, 135, 0.58);
+
 
 .logo {
     position:absolute;
@@ -110,18 +113,39 @@ $max-font-size-nav: 38px;
     &.nav {
         position: relative;
         
+        .wrapper {
+            color: $color-nav;
+        }
+        .titulo {
+            border-color: $color-nav;
+        }
+        
+        .ovalo {
+            background: $color-nav !important;
+        }
+        .izquierda:before {
+            border-right-color: $color-nav !important;
+        }
+        .derecha:after {
+            border-left-color: $color-nav !important;
+        }
+        
         .horizonte {
+            text-shadow: $text-shadow-nav;
             font-size: $max-font-size-nav * 1.11;
         }
         .de {
+            text-shadow: $text-shadow-nav;
             font-size: $max-font-size-nav * 0.66;
             margin-top: -$max-font-size-nav * 0.17; 
         }
         .calamuchita {
+            text-shadow: $text-shadow-nav;
             font-size: $max-font-size-nav;
             margin-top: -$max-font-size-nav * 0.33; 
         }
         .cabanas {
+            text-shadow: $text-shadow-nav;
             font-size: $max-font-size-nav * 0.44;
         }
     }

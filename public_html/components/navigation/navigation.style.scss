@@ -18,6 +18,12 @@ $offcanvas-background: rgb(115, 93, 74);
     background-image: url('../img/mosaico.png');
 }
 
+/* Logo */
+
+.logo-wrapper {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
 
 /* tabs */
 /* http://foundation.zurb.com/sites/docs/tabs.html */
@@ -37,71 +43,56 @@ $tab-background: rgb(115, 93, 74);
         box-shadow: none !important;
         
         > li {
+            height: 50px;
+            cursor: pointer;
+            
             > a {
-                transition: border-color .6s;
+                position: relative;
+                display: block;
+                text-align: center;
+                font-family: hor_fnt;
+                text-decoration: none;
+                transition: color .2s;
+                letter-spacing: 1px;
+                font-weight: bold;
+                font-size: 20px;
+                color: #734e24;
                 border-bottom: 1px solid #8c6139;
-                border-right: none !important;
                 margin-top: 0;
                 margin-bottom: 0;
                 margin-right: 15px;
                 margin-left: 15px;
                 padding-bottom: 15px;
+                text-shadow: 0px 1px 1px rgba(202, 186, 135, 0.58);
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            
+            &:hover > a {
+                /*color: rgba(142,99,46,0.75);*/
+                color: #634421;
+            }
+            
+            &.active > a {
+                color: #563c1e;
             }
             
             &:last-child > a {
                 border-bottom: none;
             }
-            
-            &.active > a {
-                border-color: transparent;
-            }
         } 
     }
-/*    
-    &:after {
-        content: '';
-        display: block;
-        width: 100%;
-        height: 100%;
-        background: url('../img/mosaico.png');
-        transition: background .5s;
-    } */
-    
-    > li {
-        float: left;
-        width: 20%;
-        height: 50px;
-        cursor: pointer;
-        overflow: hidden;
-        transition: height .3s;
+
+/*    > li {
+     
+      
         
-        > a {
-            position: relative;
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            font-family: hor_fnt;
-            letter-spacing: 1px;
-            font-weight: bold;
-            font-size: 20px;
-            color: rgb(142, 96, 44);
-            text-shadow: 0px 1px 2px rgba(255, 235, 169, 0.58);
-            margin-top: 5px;
-            margin-bottom: 5px;
-            border-right: 1px solid #8c6139;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            transition: color .2s;
-        }
-        &:hover > a {
-            color: rgba(142,99,46,0.75);
-        }
         &.active {
             position:relative;
             
             &:after {
                 width: 100%;
-                /*left: 0%;*/
+                left: 0%;
             }
             
             &:hover > a {
@@ -117,132 +108,36 @@ $tab-background: rgb(115, 93, 74);
             background-image: url('../img/line.png');
             height: 25px;
             width: 0;
-            /*left: 50%;*/
+            left: 50%;
             transition: width .6s, left .6s;
         }
-    }
-}
-
-header {
-    position: fixed;
-    z-index: 99999;
-    height: 50px;
-    width: 100%;
-    
-    > div.background {
-        position: relative;
-        background: rgb(115, 93, 74);
-        box-shadow: 1px 0px 5px -1px black;
-        height: 50px;
-        width: 100%;
-        border-bottom: 1px solid #9A7C66;
-        transition: height .3s, background .5s;
-
-
-        
-        > div.attach {
-            max-width: 1350px;
-            margin: auto;
-            position: relative;
-            
-            > div.nav_logo {
-/*                background-image: url('img/nav-logo.png');*/
-/*                background-size: cover; 
-                background-position: center center; */
-                width: 30%;
-                height: 130px;
-                z-index: 1;
-                position: absolute;
-                background-color: #FFD578;
-                box-shadow: 1px 1px 15px -1px rgba(0, 0, 0, 0.54);
-                left: 30px;
-                top: -10px;
-                border-bottom-left-radius: 2px;
-                border-bottom-right-radius: 2px;
-                transition: height .3s linear .15s;
-                
-                > img {
-                    position: relative;
-                    width: 100%;
-                    height: 100%;
-                    
-                    &:after {
-                        content: '';
-                        display: block;
-                        background-color: rgba(255, 153, 0, 0.4);
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-                
-                
-            }
-        }
-    }
-    
-    &.ocultar > div.background {
-        height: 0;
-        
-        > div.attach {
-            > div.nav_logo {
-                height: 0;
-            }
-            
-            > #primary_nav > ul > li {
-                height: 0;
-            }
-        }
-    }
-    
-    &.transparente {
-        > div.background {
-            background: rgba(117, 117, 117, 0.13);
-            
-            > div.attach {
-                > #primary_nav {
-                    margin: auto;
-                }
-                
-                > div.nav_logo {
-                    height: 0;
-                }
-            }
-        }  
-        
-        &:after > div.background {
-            background: transparent;
-        }
-    }  
+    }*/
 }
 
 
-/* Contacto */
+/* animacion */
+$base-delay: 0.35s;
+$animation-duration: 0.1s;
+$menu-items: 4;
 
-.contacto {
-    padding-right: 0 !important;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    z-index: -1;
-    padding-top: 5px !important;
+.off-canvas {
+    .logo-wrapper {
+        @include animation(0.9s, $base-delay);
+    }
     
-    .icono-footer {
-        .icono {
-            top: -63px;
-            position: relative;
-            background-color: #a27e5b;
-            box-shadow: 1px 1px 5px rgb(129, 103, 77);
+    @for $i from 1 through $menu-items {
+        ul.tabs > li:nth-child(#{$i}) {
+            @include animation($animation-duration, $base-delay + $animation-duration * $i);
+        }
+    }
+    
+    &.is-open {
+        .logo-wrapper {
+            animation-name: fadeIn;
         }
         
-        &.show .icono{
-            top: 0;
+        ul.tabs > li {
+            animation-name: fadeInDown;
         }
-    } 
-}
-
-
-/* Logo */
-.logo-wrapper {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    }
 }

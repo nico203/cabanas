@@ -61,6 +61,9 @@ module.exports = function (grunt) {
             dist: {
                 src: ['public_html/dist']
             },
+            css: {
+                src: ['public_html/css']
+            },
             temp: {
                 src: ['public_html/tmp']
             }
@@ -83,6 +86,13 @@ module.exports = function (grunt) {
             dev: {
                 files: ['Gruntfile.js', 'src/**/*.js', '*.html'],
                 tasks: ['jshint', 'html2js:dist', 'concat:dist', 'clean:temp'],
+                options: {
+                    atBegin: true
+                }
+            },
+            sass: {
+                files: ['src/**/*.scss'],
+                tasks: ['sass:dist'],
                 options: {
                     atBegin: true
                 }
@@ -162,6 +172,7 @@ module.exports = function (grunt) {
     
     
     grunt.registerTask('css', ['copy', 'sass', 'cssmin']);
+    grunt.registerTask('devcss', ['clean:css', 'sass:dist']);
     
     grunt.registerTask('test', ['bower', 'jshint']);
     grunt.registerTask('minified', ['bower', 'watch:min']);
