@@ -15,7 +15,6 @@ angular.module('HorizontesApp').provider('windowResize', function() {
             
             //Primero vemos que tamaño tiene la pantalla al cargar la pagina
             var calcViewport = function(width) {
-                console.log('width',width);
                 var size = 'small';
                 if(width > windowMinSizes.medium) {
                     size = 'medium';
@@ -24,7 +23,6 @@ angular.module('HorizontesApp').provider('windowResize', function() {
                     size = 'large';
                 }
                 if(currentViewport !== size) {
-                    console.log(currentViewport, size);
                     currentViewport = size;
                     $rootScope.$broadcast('viewportChange', size);
                 }

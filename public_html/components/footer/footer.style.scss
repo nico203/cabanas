@@ -1,4 +1,4 @@
-footer {
+#footer {
     min-height: 100px;
     background: #414141;
     border-top: 2px solid #9a9a9a;
@@ -11,6 +11,10 @@ footer {
     text-shadow: 1px 1px #1f1f1f;
     position: relative;
     overflow: hidden;
+    
+    @media screen and (max-width: 40em) {
+        padding-top: 30px;
+    }
     
     &::after{
         content: '';
@@ -27,15 +31,15 @@ footer {
     }
     
     .row-footer {
-        margin: 0 !important;
         padding-bottom: 30px;
+        margin-bottom: 0;
     }
     
     .icono-container {
         text-align: right;
-        padding: 0 80px;
         background-color: transparent;
         transition: background-color .5s linear;
+      
         
         .icono-footer {
             display: inline-block;
@@ -96,9 +100,17 @@ footer {
                 .icono {
                     background-image: url(img/telefono.png);
                     background-size: 27px 38px;
-                    
-                    &:hover  {
+                }
+                
+                &._1 {
+                    .icono:hover  {
                         background-color: #00a083;
+                    }
+                }
+
+                &._2 {
+                    .icono:hover  {
+                        background-color: #f12d2d;
                     }
                 }
             }
@@ -106,23 +118,44 @@ footer {
             &.activo {
                 padding-right: 10px;
                 margin-right: 10px;
+                margin-bottom: 5px;
     
                 .texto {
                     padding: 0 20px;
                 }
                 
                 &.telefono {
-                    background-color: #00caa5;
-                    border: 1px solid #00eabf;
-                    
-                    .icono {
-                        background-color: #00a083;
-                        box-shadow: 1px 1px 2px rgb(0, 112, 91);
-                    }
-                    
                     .texto {
                         max-width: 240px;
-                        text-shadow: 1px 1px #00705b;
+                    }
+                    
+                    
+                    &._1 {
+                        border: 1px solid #00eabf;
+                        background-color: #00caa5;
+                        
+                        .icono  {
+                            background-color: #00a083;
+                            box-shadow: 1px 1px 2px rgb(0, 112, 91);
+                        }
+                        
+                        .texto {
+                            text-shadow: 1px 1px #00705b;
+                        }
+                    }
+
+                    &._2 {
+                        border: 1px solid #ffa6a6;
+                        background-color: #ff6b6b;
+                        
+                        .icono  {
+                            background-color: #f12d2d;
+                            box-shadow: 1px 1px 2px #581111;
+                        }
+                        
+                        .texto {
+                            text-shadow: 1px 1px #582727;
+                        }
                     }
                 }
                 
@@ -148,6 +181,20 @@ footer {
             display: inline-block;
             vertical-align: top;
             padding: 5px 10px;
+        }
+        
+          
+        /* Medium and down */
+        @media screen and (max-width: 63.9375em) {
+            .texto {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .icono-footer {
+                width: 100%;
+                text-align: center;
+            }
         }
     }
     

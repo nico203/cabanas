@@ -1,5 +1,9 @@
 .top-mapa {
-    background-image: url(img/top.jpg);
+    background-image: url(../img/mapa/top.jpg);
+    
+    @media screen and (max-width: 63.9375em) {
+        background-position: 40% 0;
+    }
 }
 
 .mapa-container {
@@ -51,6 +55,10 @@
                 }
             }
         }
+    }
+    
+    @media screen and  (max-width: 63.9375em) {
+        width: 100%;
     }
 }
 

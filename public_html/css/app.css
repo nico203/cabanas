@@ -72,22 +72,23 @@ body {
 .top {
   width: 100%;
   background-size: cover;
-  height: 450px;
+  background-position: center center;
+  height: 95vh;
   border-bottom: 1px solid #797979;
   color: white;
   font-family: "franklin-gothic-urw", "Helvetica Neue", "Helvetica", "Arial", "sans-serif";
   text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1), 0px -5px 35px rgba(255, 255, 255, 0.3); }
   .top > h1 {
-    padding-top: 180px;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-top: 50%;
+    padding-left: 20px;
+    padding-right: 20px;
     padding-bottom: 20px;
-    font-size: 70px;
+    font-size: 50px;
     font-weight: bold; }
   .top > p {
     font-size: 20px;
-    padding-left: 90px;
-    padding-right: 90px; }
+    padding-left: 25px;
+    padding-right: 25px; }
 
 .content {
   width: 100%;
@@ -138,7 +139,17 @@ body {
 /* medium and up */
 @media screen and (min-width: 40em) {
   .ocultar-mobile {
-    display: block; } }
+    display: block; }
+
+  .top > h1 {
+    padding-top: 180px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 20px;
+    font-size: 70px; }
+  .top > p {
+    padding-left: 90px;
+    padding-right: 90px; } }
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -211,7 +222,7 @@ body {
     right: auto;
     left: auto;
     margin: 0 auto; } }
-footer {
+#footer {
   min-height: 100px;
   background: #414141;
   border-top: 2px solid #9a9a9a;
@@ -224,7 +235,10 @@ footer {
   text-shadow: 1px 1px #1f1f1f;
   position: relative;
   overflow: hidden; }
-  footer::after {
+  @media screen and (max-width: 40em) {
+    #footer {
+      padding-top: 30px; } }
+  #footer::after {
     content: '';
     width: 70%;
     margin-left: 50%;
@@ -236,15 +250,15 @@ footer {
     box-shadow: 0 1px 50px black;
     position: absolute;
     top: -13px; }
-  footer .row-footer {
-    margin: 0 !important;
-    padding-bottom: 30px; }
-  footer .icono-container {
+  #footer .row-footer {
+    padding-bottom: 30px;
+    margin-bottom: 0; }
+  #footer .icono-container {
     text-align: right;
-    padding: 0 80px;
     background-color: transparent;
-    transition: background-color .5s linear; }
-    footer .icono-container .icono-footer {
+    transition: background-color .5s linear;
+    /* Medium and down */ }
+    #footer .icono-container .icono-footer {
       display: inline-block;
       padding: 5px 10px;
       padding-right: 0;
@@ -252,7 +266,7 @@ footer {
       margin-right: 0;
       transition: all .5s linear;
       border: none; }
-      footer .icono-container .icono-footer .texto {
+      #footer .icono-container .icono-footer .texto {
         line-height: 50px;
         display: inline-block;
         vertical-align: top;
@@ -261,7 +275,7 @@ footer {
         overflow: hidden;
         white-space: nowrap;
         transition: all .5s linear; }
-      footer .icono-container .icono-footer .icono {
+      #footer .icono-container .icono-footer .icono {
         width: 50px;
         height: 50px;
         background-color: #8a8a8a;
@@ -272,57 +286,76 @@ footer {
         transition: all .25s linear;
         background-position: center;
         background-repeat: no-repeat; }
-      footer .icono-container .icono-footer.facebook .icono {
+      #footer .icono-container .icono-footer.facebook .icono {
         background-image: url(img/fb_ico.png);
         background-size: 24px 38px; }
-        footer .icono-container .icono-footer.facebook .icono:hover {
+        #footer .icono-container .icono-footer.facebook .icono:hover {
           background-color: #3b5998; }
-      footer .icono-container .icono-footer.mail .icono {
+      #footer .icono-container .icono-footer.mail .icono {
         background-image: url(img/mail.png);
         background-size: 38px 24px; }
-        footer .icono-container .icono-footer.mail .icono:hover {
+        #footer .icono-container .icono-footer.mail .icono:hover {
           background-color: #ff8100; }
-      footer .icono-container .icono-footer.telefono .icono {
+      #footer .icono-container .icono-footer.telefono .icono {
         background-image: url(img/telefono.png);
         background-size: 27px 38px; }
-        footer .icono-container .icono-footer.telefono .icono:hover {
-          background-color: #00a083; }
-      footer .icono-container .icono-footer.activo {
+      #footer .icono-container .icono-footer.telefono._1 .icono:hover {
+        background-color: #00a083; }
+      #footer .icono-container .icono-footer.telefono._2 .icono:hover {
+        background-color: #f12d2d; }
+      #footer .icono-container .icono-footer.activo {
         padding-right: 10px;
-        margin-right: 10px; }
-        footer .icono-container .icono-footer.activo .texto {
+        margin-right: 10px;
+        margin-bottom: 5px; }
+        #footer .icono-container .icono-footer.activo .texto {
           padding: 0 20px; }
-        footer .icono-container .icono-footer.activo.telefono {
-          background-color: #00caa5;
-          border: 1px solid #00eabf; }
-          footer .icono-container .icono-footer.activo.telefono .icono {
+        #footer .icono-container .icono-footer.activo.telefono .texto {
+          max-width: 240px; }
+        #footer .icono-container .icono-footer.activo.telefono._1 {
+          border: 1px solid #00eabf;
+          background-color: #00caa5; }
+          #footer .icono-container .icono-footer.activo.telefono._1 .icono {
             background-color: #00a083;
             box-shadow: 1px 1px 2px #00705b; }
-          footer .icono-container .icono-footer.activo.telefono .texto {
-            max-width: 240px;
+          #footer .icono-container .icono-footer.activo.telefono._1 .texto {
             text-shadow: 1px 1px #00705b; }
-        footer .icono-container .icono-footer.activo.mail {
+        #footer .icono-container .icono-footer.activo.telefono._2 {
+          border: 1px solid #ffa6a6;
+          background-color: #ff6b6b; }
+          #footer .icono-container .icono-footer.activo.telefono._2 .icono {
+            background-color: #f12d2d;
+            box-shadow: 1px 1px 2px #581111; }
+          #footer .icono-container .icono-footer.activo.telefono._2 .texto {
+            text-shadow: 1px 1px #582727; }
+        #footer .icono-container .icono-footer.activo.mail {
           background-color: #ffc800;
           border: 1px solid #ffdd60; }
-          footer .icono-container .icono-footer.activo.mail .icono {
+          #footer .icono-container .icono-footer.activo.mail .icono {
             background-color: #ff8100;
             box-shadow: 1px 1px 2px #8e7100; }
-          footer .icono-container .icono-footer.activo.mail .texto {
+          #footer .icono-container .icono-footer.activo.mail .texto {
             max-width: 310px;
             text-shadow: 1px 1px #8e6f00; }
-    footer .icono-container .texto {
+    #footer .icono-container .texto {
       line-height: 50px;
       display: inline-block;
       vertical-align: top;
       padding: 5px 10px; }
-  footer .text-center {
+    @media screen and (max-width: 63.9375em) {
+      #footer .icono-container .texto {
+        width: 100%;
+        text-align: center; }
+      #footer .icono-container .icono-footer {
+        width: 100%;
+        text-align: center; } }
+  #footer .text-center {
     text-align: center; }
-  footer .last-footer {
+  #footer .last-footer {
     padding-bottom: 55px;
     padding-top: 30px;
     border-top: 1px solid #101010;
     background: #272329; }
-  footer .resaltar-contacto {
+  #footer .resaltar-contacto {
     background-color: gray; }
 
 @keyframes zoom {
@@ -346,7 +379,7 @@ footer {
     transform: scale(1.05); }
 
 #bienvenido {
-  background-color: yellow; }
+  background-image: url(../img/home/blurred/1.jpg); }
   #bienvenido .animate-1 {
     animation-duration: 0.7s;
     animation-delay: 0.3s; }
@@ -355,7 +388,7 @@ footer {
     animation-delay: 0.6s; }
 
 #nuestras_cabanas {
-  background-color: red; }
+  background-image: url(../img/home/blurred/2.jpg); }
   #nuestras_cabanas .animate-1 {
     animation-duration: 0.7s;
     animation-delay: 0.3s; }
@@ -438,7 +471,7 @@ footer {
     opacity: 1; }
 
 #servicios {
-  background-color: blue; }
+  background-image: url(../img/home/blurred/3.jpg); }
   #servicios .animate-1 {
     animation-duration: 0.7s;
     animation-delay: 0.3s; }
@@ -480,7 +513,7 @@ footer {
     font-weight: bold; }
 
 #contacto {
-  background-color: pink; }
+  background-image: url(../img/home/blurred/4.jpg); }
   #contacto .animate-1 {
     animation-duration: 0.7s;
     animation-delay: 0.3s; }
@@ -531,8 +564,10 @@ footer {
     #contacto .icono.telefono {
       background-image: url(img/telefono.png);
       background-size: 27px 38px; }
-      #contacto .icono.telefono:hover {
+      #contacto .icono.telefono:hover._1 {
         background-color: #00a083; }
+      #contacto .icono.telefono:hover._2 {
+        background-color: #f12d2d; }
   #contacto .margin {
     margin-bottom: 40px; }
   #contacto .full-height {
@@ -541,8 +576,7 @@ footer {
     height: 20px;
     font-size: 20px;
     margin-top: 10px;
-    word-wrap: break-word;
-    max-width: 220px; }
+    word-wrap: break-word; }
   #contacto .texto-fondo {
     font-size: 18px; }
 
@@ -560,7 +594,7 @@ footer {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 999; }
+  z-index: 8; }
   #menu-fp ul {
     position: fixed;
     z-index: 1000;
@@ -571,20 +605,46 @@ footer {
     bottom: 50%;
     margin-bottom: -37.5px;
     /*valores a modificar segun pantalla*/
-    left: 5px; }
+    left: 0px; }
     #menu-fp ul li {
       display: block;
-      width: 6px;
-      border-radius: 3px;
-      height: 20px;
-      background: white;
-      margin-bottom: 5px;
-      transition: background-color .2s linear; }
-      #menu-fp ul li.active {
-        background: red; }
+      width: 14px;
+      height: 13px;
+      margin: 9px;
+      position: relative; }
+      #menu-fp ul li a {
+        cursor: pointer;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+        height: 4px;
+        width: 4px;
+        border: 0;
+        background: white;
+        left: 50%;
+        top: 50%;
+        margin: -2px 0 0 -2px;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out; }
+      #menu-fp ul li.active a {
+        height: 12px;
+        width: 12px;
+        margin: -6px 0 0 -6px;
+        border-radius: 100%; }
+      #menu-fp ul li:hover a {
+        width: 10px;
+        height: 10px;
+        margin: -5px 0px 0px -5px; }
+      #menu-fp ul li:hover.active a {
+        height: 12px;
+        width: 12px;
+        margin: -6px 0 0 -6px;
+        border-radius: 100%; }
     @media screen and (min-width: 40em) {
       #menu-fp ul {
-        left: 10px; } }
+        left: 5px; } }
 
 .section {
   position: relative;
@@ -613,8 +673,18 @@ footer {
     background: #ec0700;
     color: white; }
 
+.fp-section {
+  background-size: cover;
+  background-position: center center; }
+  .fp-section::before {
+    content: '';
+    background: black; }
+
 .top-mapa {
-  background-image: url(img/top.jpg); }
+  background-image: url(../img/mapa/top.jpg); }
+  @media screen and (max-width: 63.9375em) {
+    .top-mapa {
+      background-position: 40% 0; } }
 
 .mapa-container {
   background: #a5a5a5;
@@ -654,6 +724,9 @@ footer {
           transition: opacity .4s linear; }
         .mapa-container > .texto > .puntos > .punto.ng-hide {
           opacity: 0; }
+  @media screen and (max-width: 63.9375em) {
+    .mapa-container {
+      width: 100%; } }
 
 #mapa {
   position: absolute !important;
@@ -1186,8 +1259,10 @@ a {
   background-image: url(../img/servicios/top.jpg); }
 
 .servicio {
-  padding: 80px;
-  text-align: justify; }
+  font-family: sans-serif;
+  padding: 30px;
+  text-align: justify;
+  /* Medium and up */ }
   .servicio:first-child {
     padding-top: 80px; }
   .servicio:last-child {
@@ -1201,12 +1276,17 @@ a {
     transition: all .25s linear; }
   .servicio h1 {
     padding-bottom: 10px;
-    font-size: 60px;
+    font-size: 40px;
     font-family: hor_fnt; }
-  .servicio ._left {
-    padding-left: 80px; }
-  .servicio ._right {
-    padding-right: 80px; }
+  @media screen and (min-width: 40em) {
+    .servicio {
+      padding: 80px; }
+      .servicio ._left {
+        padding-left: 80px; }
+      .servicio ._right {
+        padding-right: 80px; }
+      .servicio h1 {
+        font-size: 60px; } }
 
 body.is-reveal-open {
   overflow: hidden; }
@@ -1295,67 +1375,89 @@ html.is-reveal-open body {
   .reveal.without-overlay {
     position: fixed; }
 
-.my-photo-modal-slider .imageview {
-  height: auto;
-  width: auto;
-  max-height: 90%;
-  max-width: 80%;
-  position: absolute;
-  height: auto !important;
-  transition: all .3s linear;
-  margin: auto;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0;
-  bottom: 0;
-  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.54);
-  border: 1px solid #858585;
-  animation: zoom .3s linear; }
-  .my-photo-modal-slider .imageview.center {
+.my-photo-modal-slider {
+  /* Large and up */
+  /* Medium and up */ }
+  .my-photo-modal-slider .imageview {
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    height: auto !important;
+    transition: all .3s linear;
     margin: auto;
     top: 0 !important;
     left: 0 !important;
     right: 0;
-    bottom: 0; }
-.my-photo-modal-slider .cerrar-modal {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #bbb;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.2s; }
-  .my-photo-modal-slider .cerrar-modal:hover, .my-photo-modal-slider .cerrar-modal:focus {
+    bottom: 0;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.54);
+    border: 1px solid #858585;
+    animation: zoom .3s linear; }
+    .my-photo-modal-slider .imageview.center {
+      margin: auto;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0;
+      bottom: 0; }
+  .my-photo-modal-slider .cerrar-modal {
+    position: absolute;
+    top: 0px;
+    right: 10px;
     color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
     text-decoration: none; }
-.my-photo-modal-slider .arrow {
-  position: absolute;
-  z-index: 1002;
-  display: block;
-  top: 50%;
-  margin-top: -35px;
-  width: 36px;
-  height: 71px;
-  outline: none;
-  cursor: pointer;
-  background: url(img/blank.gif) no-repeat; }
-  .my-photo-modal-slider .arrow.next {
-    opacity: 0.2;
-    right: 20px;
-    background-image: url(img/paddle_next_999.png);
-    transition: 0.2s linear all; }
-    .my-photo-modal-slider .arrow.next:hover {
+  .my-photo-modal-slider .arrow {
+    position: absolute;
+    z-index: 1002;
+    display: block;
+    top: 50%;
+    margin-top: -35px;
+    width: 36px;
+    height: 71px;
+    outline: none;
+    cursor: pointer;
+    background: url(img/blank.gif) no-repeat; }
+    .my-photo-modal-slider .arrow.next {
+      right: 5px;
+      transition: 0.2s linear all;
       opacity: 1;
       background-image: url(img/paddle_next_fff.png); }
-  .my-photo-modal-slider .arrow.prev {
-    opacity: 0.2;
-    left: 20px;
-    background-image: url(img/paddle_prev_999.png);
-    transition: all 0.2s linear; }
-    .my-photo-modal-slider .arrow.prev:hover {
+    .my-photo-modal-slider .arrow.prev {
+      left: 5px;
+      transition: all 0.2s linear;
       opacity: 1;
       background-image: url(img/paddle_prev_fff.png); }
+  @media screen and (min-width: 40em) {
+    .my-photo-modal-slider .imageview {
+      max-height: 90%;
+      max-width: 80%; }
+    .my-photo-modal-slider .cerrar-modal {
+      top: 15px;
+      right: 35px;
+      color: #bbb;
+      transition: 0.2s; }
+      .my-photo-modal-slider .cerrar-modal:hover, .my-photo-modal-slider .cerrar-modal:focus {
+        color: #fff;
+        text-decoration: none; }
+    .my-photo-modal-slider .arrow.next {
+      opacity: 0.2;
+      right: 20px;
+      background-image: url(img/paddle_next_999.png);
+      transition: 0.2s linear all; }
+      .my-photo-modal-slider .arrow.next:hover {
+        opacity: 1;
+        background-image: url(img/paddle_next_fff.png); }
+    .my-photo-modal-slider .arrow.prev {
+      opacity: 0.2;
+      left: 20px;
+      background-image: url(img/paddle_prev_999.png);
+      transition: all 0.2s linear; }
+      .my-photo-modal-slider .arrow.prev:hover {
+        opacity: 1;
+        background-image: url(img/paddle_prev_fff.png); } }
 
 .orbit {
   position: relative; }
@@ -1460,13 +1562,17 @@ html.is-reveal-open body {
   background-position: center center;
   background-size: cover; }
   .orbit-image._1 {
-    background-color: red; }
+    background-color: #49575b;
+    background-image: url(../img/home/1.jpg); }
   .orbit-image._2 {
-    background-color: blue; }
+    background-color: #7d8656;
+    background-image: url(../img/home/2.jpg); }
   .orbit-image._3 {
-    background-color: green; }
+    background-color: #508bd6;
+    background-image: url(../img/home/3.jpg); }
   .orbit-image._4 {
-    background-color: yellow; }
+    background-color: #57551c;
+    background-image: url(../img/home/bg-2.jpg); }
 
 .orbit-caption {
   position: absolute;
@@ -1497,7 +1603,7 @@ html.is-reveal-open body {
 
 .slider {
   display: block;
-  background: purple;
+  background: #3c0f3c;
   height: 100%;
   width: 100%; }
 
@@ -1521,7 +1627,7 @@ cabanas: 0.44
   text-align: center; }
   .logo .wrapper {
     font-family: hor_fnt;
-    color: black; }
+    color: #fff3d2; }
     .logo .wrapper span {
       display: block; }
     .logo .wrapper .horizonte {
@@ -1538,8 +1644,8 @@ cabanas: 0.44
       text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1); }
     .logo .wrapper .titulo {
       padding-top: 3px;
-      border-top: 5px solid black;
-      border-bottom: 5px solid black;
+      border-top: 5px solid #fff3d2;
+      border-bottom: 5px solid #fff3d2;
       padding-bottom: 5px;
       margin-bottom: 7px; }
     .logo .wrapper .barra {
@@ -1548,7 +1654,7 @@ cabanas: 0.44
       .logo .wrapper .barra .ovalo {
         width: 6px;
         height: 8px;
-        background: black;
+        background: #fff3d2;
         display: block;
         position: absolute;
         top: 50%;
@@ -1562,7 +1668,7 @@ cabanas: 0.44
             width: 0;
             height: 0;
             border-top: 4px solid transparent;
-            border-right: 22px solid black;
+            border-right: 22px solid #fff3d2;
             border-bottom: 4px solid transparent;
             right: 4px; }
         .logo .wrapper .barra .ovalo.derecha {
@@ -1573,7 +1679,7 @@ cabanas: 0.44
             width: 0;
             height: 0;
             border-top: 4px solid transparent;
-            border-left: 22px solid black;
+            border-left: 22px solid #fff3d2;
             border-bottom: 4px solid transparent;
             left: 4px; }
     .logo .wrapper .cabanas {

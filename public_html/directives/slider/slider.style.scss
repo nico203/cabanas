@@ -30,16 +30,20 @@
     background-size: cover;
     
     &._1 {
-        background-color: red;
+        background-color: #49575b;
+        background-image: url(../img/home/1.jpg);
     }
     &._2 {
-        background-color: blue;
+        background-color: #7d8656;
+        background-image: url(../img/home/2.jpg);
     }
     &._3 {
-        background-color: green;
+        background-color: #508bd6;
+        background-image: url(../img/home/3.jpg);
     }
     &._4 {
-        background-color: yellow;
+        background-color: #57551c;
+        background-image: url(../img/home/bg-2.jpg);
     }
 }
 
@@ -62,7 +66,7 @@
 
 .slider {
     display: block;
-    background: purple;
+    background: #3c0f3c;
     height: 100%;
     width: 100%;
 }

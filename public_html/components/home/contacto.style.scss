@@ -2,7 +2,7 @@ $base: 0.3s;
 $marginTopBottomView: 40px;
 
 #contacto {
-    background-color: pink;
+    background-image: url(../img/home/blurred/4.jpg);
     
     .animate-1 {
         @include animation(0.7s, $base);
@@ -71,9 +71,17 @@ $marginTopBottomView: 40px;
         &.telefono {
             background-image: url(img/telefono.png);
             background-size: 27px 38px;
+            
+            
 
             &:hover  {
-                background-color: #00a083;
+                &._1 {
+                    background-color: #00a083;
+                }
+                
+                &._2 {
+                    background-color: #f12d2d;
+                }
             }
         }
     }
@@ -91,7 +99,6 @@ $marginTopBottomView: 40px;
         font-size: 20px;
         margin-top: 10px;
         word-wrap: break-word;
-        max-width: 220px;
     }
     
     .texto-fondo {

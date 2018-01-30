@@ -9,7 +9,7 @@ angular.module('HorizontesApp').directive('slider',[
                 
                 function init() {
                     orbit = new Foundation.Orbit(elem.find('.orbit'), {
-                        'timerDelay': 500,
+                        'timerDelay': 1500,
                         'bullets': false,
                         'navButtons': false,
                         animInFromLeft: 'fade-in',
@@ -17,7 +17,6 @@ angular.module('HorizontesApp').directive('slider',[
                         animOutToLeft: 'fade-out',
                         animOutToRight: 'fade-out'
                     });
-                    console.log('orbit', orbit);
                 }
                 
                 //init

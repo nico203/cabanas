@@ -1,7 +1,8 @@
 $base: 0.3s;
 
 #nuestras_cabanas {
-    background-color: red;
+    background-image: url(../img/home/blurred/2.jpg);
+    
     
     .animate-1 {
         @include animation(0.7s, $base);

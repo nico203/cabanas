@@ -6,15 +6,9 @@
  *  
  */
 
-function mapaController($scope, $timeout, $window){
-    $scope.indice = 0;
-    var mapa = null;
-    
-    $scope.init = function(){
-        $scope.cargarMapa();
-    };
-    
-    $scope.cargarMapa = function(){
+function mapaController($scope, $timeout){
+
+    function cargarMapa (){
         $timeout(function(){
             try {
                 //Overlay
@@ -105,13 +99,22 @@ function mapaController($scope, $timeout, $window){
                 map.controls[google.maps.ControlPosition.TOP_RIGHT].push(mainDiv);
             } catch (err) {
                 $scope.indice = (($scope.indice < 5) ? $scope.indice + 1 : 1);
-                $scope.cargarMapa();
+                cargarMapa();
             }
-        }, 200);
+        });
+    }
+    
+    $scope.indice = 0;
+    
+    this.$onInit = function(){
+        cargarMapa();
+        $timeout(function() {
+            AOS.init();
+        });
     };
 }
 
 angular.module('HorizontesApp').component('mapa', {
     templateUrl: 'components/mapa/mapa.template.html',
-    controller: ['$scope','$timeout','$window',mapaController]
+    controller: ['$scope','$timeout',mapaController]
 });

@@ -2,14 +2,19 @@ $reveal-background : rgba(0, 0, 0, 0.8);
 
 @include foundation-reveal;
 
+ 
 
 .my-photo-modal-slider {
+        
+    /* Large and up */
+    /* Medium and up */
+
     
     .imageview {
         height: auto;
         width: auto;
-        max-height: 90%;
-        max-width: 80%;
+        max-height: 100%;
+        max-width: 100%;
         position: absolute;
         height: auto !important;
         transition: all .3s linear;
@@ -33,18 +38,13 @@ $reveal-background : rgba(0, 0, 0, 0.8);
     
     .cerrar-modal {
         position: absolute;
-        top: 15px;
-        right: 35px;
-        color: #bbb;
+        top: 0px;
+        right: 10px;
+        color: #fff;
         font-size: 40px;
         font-weight: bold;
         cursor: pointer;
-        transition: 0.2s;
-        
-        &:hover,&:focus {
-            color: #fff;
-            text-decoration: none;
-        }
+        text-decoration: none;
     }
     
     .arrow {
@@ -60,28 +60,64 @@ $reveal-background : rgba(0, 0, 0, 0.8);
         background: url(img/blank.gif) no-repeat;
         
         &.next {
-            opacity: 0.2;
-            right: 20px;
-            background-image: url(img/paddle_next_999.png);
+            right: 5px;
             transition: 0.2s linear all;
-            
-            &:hover {
-                opacity: 1;
-                background-image: url(img/paddle_next_fff.png);
-            }
+            opacity: 1;
+            background-image: url(img/paddle_next_fff.png);
         }
         
         &.prev {
-            opacity: 0.2;
-            left: 20px;
-            background-image: url(img/paddle_prev_999.png);
+            left: 5px;
             transition: all 0.2s linear;
-            
-            &:hover {
-                opacity: 1;
-                background-image: url(img/paddle_prev_fff.png);
+            opacity: 1;
+            background-image: url(img/paddle_prev_fff.png);
+        }
+    }
+    
+    @media screen and (min-width: 40em)  {
+        .imageview { 
+            max-height: 90%;
+            max-width: 80%;
+        }
+        
+        .cerrar-modal {
+            top: 15px;
+            right: 35px;
+            color: #bbb;
+            transition: 0.2s;
+
+            &:hover,&:focus {
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+
+        .arrow {
+            &.next {
+                opacity: 0.2;
+                right: 20px;
+                background-image: url(img/paddle_next_999.png);
+                transition: 0.2s linear all;
+
+                &:hover {
+                    opacity: 1;
+                    background-image: url(img/paddle_next_fff.png);
+                }
+            }
+
+            &.prev {
+                opacity: 0.2;
+                left: 20px;
+                background-image: url(img/paddle_prev_999.png);
+                transition: all 0.2s linear;
+
+                &:hover {
+                    opacity: 1;
+                    background-image: url(img/paddle_prev_fff.png);
+                }
             }
         }
     }
 }
+
 

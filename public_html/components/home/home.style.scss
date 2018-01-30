@@ -16,7 +16,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    z-index:999;
+    z-index:8;
     
     ul{
         position: fixed;
@@ -32,22 +32,60 @@
         
         li {
             display: block;
-            width: 6px;
-            border-radius: 3px;
-            height: 20px;
-            background: white;
-            margin-bottom: 5px;
-            transition: background-color .2s linear;
+            width: 14px;
+            height: 13px;
+            margin: 9px;
+            position: relative;
+            
+            a {
+                cursor: pointer;
+                border-radius: 50%;
+                position: absolute;
+                z-index: 1;
+                height: 4px;
+                width: 4px;
+                border: 0;
+                background: white;
+                left: 50%;
+                top: 50%;
+                margin: -2px 0 0 -2px;
+                -webkit-transition: all 0.25s ease-in-out;
+                -moz-transition: all 0.25s ease-in-out;
+                -o-transition: all 0.25s ease-in-out;
+                transition: all 0.25s ease-in-out;
+            }
             
             &.active {
-                background: red;
+                a {
+                    height: 12px;
+                    width: 12px;
+                    margin: -6px 0 0 -6px;
+                    border-radius: 100%;
+                }
+            }
+            
+            &:hover {
+                a {
+                    width: 10px;
+                    height: 10px;
+                    margin: -5px 0px 0px -5px;
+                }
+                
+                &.active {
+                    a {
+                        height: 12px;
+                        width: 12px;
+                        margin: -6px 0 0 -6px;
+                        border-radius: 100%;
+                    }
+                }
             }
         }
         
         /*valores a modificar segun pantalla*/
-        left: 5px;
+        left: 0px;
         @media screen and (min-width: 40em) {
-            left: 10px;
+            left: 5px;
         }
     }
     
@@ -81,5 +119,15 @@
     &:hover {
         background: #ec0700;
         color: white;
+    }
+}
+
+.fp-section {
+    background-size: cover;
+    background-position: center center;
+    
+    &::before {
+        content: '';
+        background: black;
     }
 }

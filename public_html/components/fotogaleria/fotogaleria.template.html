@@ -1,27 +1,27 @@
 <div class="_c">
     <div class="top top-fotogaleria">
         <h1>Tu Lugar</h1>
-        <p>Paz, descanso y relajación absolutasss.</p>
+        <p>Paz, descanso y relajación absoluta.</p>
     </div>
     <div class=" content">
         <div class="row column">
             <div class="row column">
                 <div class="row column ">
-                    <div class="title">
+                    <div class="title" data-aos="fade-up">
                         <h1>Nuestras Cabañas</h1>
                     </div>
                 </div>
-                <p class="row column texto-row">
+                <p class="row column texto-row" data-aos="fade-up">
                     A continuación verás una serie de imágenes. Haz click en una imagen para agrandarla.
                 </p>
-                <p class="row column texto-row">
+                <p class="row column texto-row" data-aos="fade-up">
                     Usa las flechas que aparecen en los costados para navegar por las imágenes disponibles.
                 </p>
             </div>
             <div class="row column">
-                <div class="row small-up-2 medium-up-3 large-up-5">
-                    <div ng-repeat="imagen in imagenes" class="column column-block">
-                        <div class="foto">
+                <div class="row small-up-2 medium-up-3 large-up-5" >
+                    <div ng-repeat="imagen in imagenes" class="column column-block" >
+                        <div class="foto" data-aos="fade-up">
                             <img ng-src="img/fotogaleria/min/{{imagen}}.jpg" ng-click='mostrarEnModal(imagen)'/>
                         </div>
                     </div>
@@ -32,3 +32,4 @@
         </div>
     </div>
 </div>
+<app-footer></app-footer>

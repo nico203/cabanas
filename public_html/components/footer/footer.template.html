@@ -1,21 +1,27 @@
 <footer id="footer">
-    <div class="row row-footer">
+    <div class="row column row-footer">
         <div class="icono-container" ng-class="{'resaltar-contacto':resaltarContacto}">
-            <span class="texto">Contacto: </span>
-            <div class="icono-footer telefono" ng-class="{'activo':iconos[0]}">
-                <span class="icono " ng-click="clickIcono(0)"></span>
-                <div class="texto"><u>Tel:</u> (343) 5-058-783</div>
+            <span class="texto" data-aos="fade-zoom-in">Contacto</span>
+            <div class="icono-footer telefono _1" ng-class="{'activo':iconos[0]}" data-aos="fade-zoom-in">
+                <a href="tel:+543546455479" class="icono" ng-click="clickIcono(0)"></a>
+                <div class="texto"><u>Tel:</u> (03546) 15455479</div>
             </div>
-            <div class="icono-footer mail" ng-class="{'activo':iconos[1]}">
-                <span class="icono " ng-click="clickIcono(1)"></span>
+            <div class="icono-footer telefono _2" ng-class="{'activo':iconos[1]}" data-aos="fade-zoom-in">
+                <a href="tel:+543546431194" class="icono" ng-click="clickIcono(1)"></a>
+                <div class="texto"><u>Tel:</u> (03546) 15431194</div>
+            </div>
+            <div class="icono-footer mail" ng-class="{'activo':iconos[2]}" data-aos="fade-zoom-in">
+                <a href="mailto:horizontedecalamuchita@gmail.com" class="icono " ng-click="clickIcono(2)"></a>
                 <div class="texto">horizontedecalamuchita@gmail.com</div>
             </div>
-            <div class="icono-footer facebook">
+            <div class="icono-footer facebook" data-aos="fade-zoom-in">
                 <a href="https://www.facebook.com/HorizontedeCalamuchita/" class="icono" target="_blank"></a>
             </div>
         </div>
     </div>
-    <div class="row row-footer text-center last-footer">
-        Horizonte de Calamuchita | Federico Leluar y Juan de Dios Filiberto - Santa Mónica - Santa Rosa de Calamuchita - Córdoba - Argentina
+    <div class="row column expanded row-footer text-center last-footer">
+        <span>
+            Horizonte de Calamuchita | Federico Leluar y Juan de Dios Filiberto - Santa Mónica - Santa Rosa de Calamuchita - Córdoba - Argentina
+        </span>
     </div>
 </footer>

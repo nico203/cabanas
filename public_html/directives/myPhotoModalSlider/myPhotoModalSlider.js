@@ -1,6 +1,6 @@
 angular.module('HorizontesApp').directive('myPhotoModalSlider',[
-    '$document', '$window', '$timeout',
-    function($document, $window, $timeout){
+    '$timeout',
+    function($timeout){
     return {
         restrict: 'AE',
         scope: {
@@ -38,17 +38,9 @@ angular.module('HorizontesApp').directive('myPhotoModalSlider',[
                 return scope.imageIndex;
             }, function(value){
                 if(!angular.isUndefined(scope.imageArray[value])) {
-                    scope.path = scope.basePath + scope.imageArray[value];
+                    scope.path = scope.basePath + scope.imageArray[value] + '.jpg';
                 }
             });
-            
-//            angular.element($window).bind('resize', function(){
-//                elem.css({
-//                    'height':$window.innerHeight+'px',
-//                    'top': $window.pageYOffset + 'px'
-//                });
-//                scope.$digest();
-//            });
         },
         templateUrl: 'directives/myPhotoModalSlider/myPhotoModalSlider.html'
     };

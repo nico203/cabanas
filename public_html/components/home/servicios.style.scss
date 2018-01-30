@@ -1,7 +1,7 @@
 $base: 0.3s;
 
 #servicios {
-    background-color: blue;
+    background-image: url(../img/home/blurred/3.jpg);
     
     .animate-1 {
         @include animation(0.7s, $base);

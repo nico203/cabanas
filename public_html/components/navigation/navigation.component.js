@@ -24,7 +24,6 @@ function navigationController($window,$scope, $timeout, $animate, $location){
     //Al iniciar el componente se calcula el tipo de pantalla y se muestra la navegacion acorde
     this.$onInit = function() {
         $timeout(function() {
-            console.log('$location',$location);
             $scope.rutaActual = $location.path().substring(1);
             if($scope.offCanvas === null) {
                 $scope.offCanvas = new Foundation.OffCanvas($('#offCanvas'), {
@@ -32,12 +31,17 @@ function navigationController($window,$scope, $timeout, $animate, $location){
                 });
                 //ver de colocar todo en un solo documento para ver cual es el error
 //                $(document).foundation();
-                console.log('offCanvas',$scope.offCanvas);
             }
         });
     };
     
-    $scope.$on('$dewstroy', function() {
+    $scope.$on('$routeChangeSuccess', function(e) {
+        $timeout(function() {
+            $('#offCanvas').foundation('close');
+        },1200);
+    });
+    
+    $scope.$on('$destroy', function() {
         $('#offCanvas').foundation('_destroy');
         $scope.offCanvas = null;
     });

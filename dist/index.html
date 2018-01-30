@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="HorizontesApp">
+    <head>
+        <title>Horizonte de Calamuchita</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+        <link href="css/app.min.css" rel="stylesheet">
+        <link href="css/jquery.fullpage.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/aos.css" />
+        <link rel="stylesheet" href="css/animate.min.css">
+        
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.fullpage.min.js"></script>
+        <script type="text/javascript" src="js/foundation.min.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/angular-animate.min.js"></script>
+        <script type="text/javascript" src="js/angular-route.min.js"></script>
+        <script type="text/javascript" src="js/aos.js"></script>
+        
+        <script type="text/javascript" src="js/app.min.js"></script>
+        
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqC6bWJZsqQZOrCDHzpJPyRIu18nUP7v8&libraries=places"></script>
+    </head>
+    <body ng-controller="baseController">
+        <div class="off-canvas-wrapper">
+            <app-navigation></app-navigation>
+            <div class="off-canvas-content" data-off-canvas-content>
+                <div class="fadeOnChangePage" ng-view></div>
+            </div>
+        </div>
+    </body>
+</html>

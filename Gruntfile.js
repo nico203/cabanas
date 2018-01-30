@@ -17,13 +17,13 @@ module.exports = function (grunt) {
             all: [
                 'Gruntfile.js', 
                 'public_html/*.js', 
-                'public_html/**/*.js',
-                '!public_html/dist/**',
+                'public_html/**/*.js'
             ]
         },
         html2js: {
             options: {
                 module: 'HorizontesApp',
+                base: 'public_html',
                 htmlmin: {
                     collapseBooleanAttributes: true,
                     collapseInlineTagWhitespace: true,
@@ -41,7 +41,7 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: ['public_html/**/*.html','!public_html/index.html'],
-                dest: 'public_html/tmp/templates.js'
+                dest: 'tmp/templates.js'
             }
         },
         concat: {
@@ -52,20 +52,20 @@ module.exports = function (grunt) {
                 src: [
                     'public_html/*.js',
                     'public_html/**/*.js', 
-                    'public_html/tmp/*.js'
+                    'tmp/*.js'
                 ],
-                dest: 'public_html/dist/js/app.js'
+                dest: 'dist/js/app.js'
             }
         },
         clean: {
             dist: {
-                src: ['public_html/dist']
+                src: ['dist']
             },
             css: {
                 src: ['public_html/css']
             },
             temp: {
-                src: ['public_html/tmp']
+                src: ['tmp']
             }
         },
         uglify: {
@@ -73,12 +73,12 @@ module.exports = function (grunt) {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build: {
-                src: 'public_html/dist/app.js',
-                dest: 'public_html/dist/app.min.js'
+                src: 'dist/app.js',
+                dest: 'dist/app.min.js'
             },
             dist: {
                 files: {
-                    'public_html/dist/js/app.min.js': ['public_html/dist/js/app.js']
+                    'dist/js/app.min.js': ['dist/js/app.js']
                 }
             }
         },
@@ -111,14 +111,14 @@ module.exports = function (grunt) {
                     style: 'expanded'
                 },
                 files: {
-                    'public_html/dist/css/app.css': 'public_html/scss/app.scss'
+                    'dist/css/app.css': 'public_html/scss/app.scss'
                 }
             }
         },
         cssmin: {
             dist: {
                 files: {
-                    'public_html/dist/css/app.min.css': 'public_html/dist/css/app.css'
+                    'dist/css/app.min.css': 'dist/css/app.css'
                 }
             }
         },
@@ -131,7 +131,7 @@ module.exports = function (grunt) {
                         flatten: true,
                         filter: 'isFile',
                         src: ['**/*.jpg','**/*.png','**/*.jpg'],
-                        dest: 'public_html/dist/css/img/'
+                        dest: 'dist/css/img/'
                     },
                     {
                         cwd: 'public_html/modules/',
@@ -139,7 +139,7 @@ module.exports = function (grunt) {
                         flatten: true,
                         filter: 'isFile',
                         src: ['**/*.jpg','**/*.png','**/*.jpg'],
-                        dest: 'public_html/dist/css/img/'
+                        dest: 'dist/css/img/'
                     },
                     {
                         cwd: 'public_html/directives/',
@@ -147,14 +147,33 @@ module.exports = function (grunt) {
                         flatten: true,
                         filter: 'isFile',
                         src: ['**/*.jpg','**/*.png','**/*.jpg'],
-                        dest: 'public_html/dist/css/img/'
+                        dest: 'dist/css/img/'
+                    },
+                    {
+                        cwd: 'public_html/img/',
+                        expand: true,
+                        src: ['**/*.jpg','**/*.png','**/*.jpg'],
+                        dest: 'dist/img/'
                     },
                     {
                         expand: true,
                         cwd: 'public_html/css/fonts',
                         src: '**',
-                        dest: 'public_html/dist/css/fonts'
-                    }
+                        dest: 'dist/css/fonts'
+                    },
+                    {src:'public_html/index.dist.html', dest:'dist/index.html'},
+                    //css
+                    {src:'bower_components/fullpage.js/dist/jquery.fullpage.min.css', dest:'dist/css/', expand: true, flatten: true},
+                    {src:'bower_components/aos/dist/aos.css', dest:'dist/css/', expand: true, flatten: true},
+                    {src:'bower_components/animate.css/animate.min.css', dest:'dist/css/', expand: true, flatten: true},
+                    //js
+                    {src:'bower_components/jquery/dist/jquery.min.js', dest:'dist/js/', expand: true, flatten: true},
+                    {src:'bower_components/fullpage.js/dist/jquery.fullpage.min.js', dest:'dist/js/', expand: true, flatten: true},
+                    {src:'bower_components/foundation-sites/dist/js/foundation.min.js', dest:'dist/js/', expand: true, flatten: true},
+                    {src:'bower_components/angular/angular.min.js', dest:'dist/js/', expand: true, flatten: true},
+                    {src:'bower_components/angular-animate/angular-animate.min.js', dest:'dist/js/', expand: true, flatten: true},
+                    {src:'bower_components/angular-route/angular-route.min.js', dest:'dist/js/', expand: true, flatten: true},
+                    {src:'bower_components/aos/dist/aos.js', dest:'dist/js/', expand: true, flatten: true},
                 ]
             }
         }
